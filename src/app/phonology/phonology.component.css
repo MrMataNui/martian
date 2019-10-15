@@ -1,0 +1,6 @@
+.span1 { position: absolute; left: 0px; text-align: right; background: transparent; }
+.span2 { padding: 0px 1px 0px 2px; }
+span.span2.transparent { background: transparent; }
+span.span2.color { background: #F9F9F9; }
+
+#syll-struct { text-align: center; }
