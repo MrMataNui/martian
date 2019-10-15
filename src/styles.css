@@ -91,13 +91,17 @@ h4 {
   font-family: 'Fugaz One', serif, cursive;
 }
 
-:not(header h1),
 h1,
 h2,
 h3,
 h4 {
   color: #04c;
   font-weight: bold;
+}
+
+header h1 {
+  color: initial;
+  font-weight: initial;
 }
 
 aside {
@@ -228,7 +232,6 @@ body {
   margin: 0 auto;
 }
 
-:not(header h1),
 h1 {
   font-size: 150%;
   margin: 0;
@@ -241,6 +244,7 @@ header {
 }
 
 header h1 {
+  font-size: initial;
   margin: 0;
   padding: 0.5em 0;
   color: black;
@@ -288,13 +292,17 @@ h4 {
   font-family: 'Fugaz One', serif, cursive;
 }
 
-:not(header h1),
 h1,
 h2,
 h3,
 h4 {
   color: #04c;
   font-weight: bold;
+}
+
+header h1 {
+  color: initial;
+  font-weight: initial;
 }
 
 p {
