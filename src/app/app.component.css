@@ -5,3 +5,7 @@ body {
 	width: 80%;
 	margin: 0 auto;
 }
+
+#head-nav { z-index: 10; }
+.sticky { position: fixed; top: 0; width: 64%; }
+.sticky + .content { padding-top: 60px; }
