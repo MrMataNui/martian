@@ -4,22 +4,22 @@
     <button id="show-english" (click)="dicionaryClick($event)"> English -> Martian </button>
   </div>
   <br />
-  <div id="martian-dicionary" [hidden]="!martianShow">
+  <div id="martian-dicionary" *ngIf="martianShow">
     <div class="center">
       Key: Martian word <b>|</b>
       <span class="rom"> (romanization) </span> <b>|</b>
-      <span class="ipa">/pronunciation/</span> <b>|</b>
-      <span class="pos">part of speech.</span> <b>|</b>
+      <span class="ipa"> /pronunciation/ </span> <b>|</b>
+      <span class="pos"> part of speech. </span> <b>|</b>
       <b> English word(s) </b>
     </div>
     <br />
     <h2 class="head-lexi">Martian - English Dictionary</h2>
     <ul class="lexilist" [innerHTML]="getMartianDictionary(martianRom)"></ul>
   </div>
-  <div id="english-dicionary" [hidden]="!englishShow">
+  <div id="english-dicionary" *ngIf="englishShow">
     <div class="center">
       Key: <b> English word </b> <b>|</b>
-      <span class="pos">part of speech.</span> <b>|</b>
+      <span class="pos"> part of speech. </span> <b>|</b>
       Martian word(s) <b>|</b>
       <span class="rom"> (romanization) </span>
     </div>
