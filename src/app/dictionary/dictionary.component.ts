@@ -10,7 +10,9 @@ import { soundSymbol } from '../dictionary';
 })
 export class DictionaryComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+    this.englishRomanization = this.englishRomanization.bind(this);
+  }
   martianRom: Romanization[];
   englishRom: Romanization[];
   martianShow = true;
@@ -92,24 +94,31 @@ export class DictionaryComponent implements OnInit {
           case ' ': getRom += ' '; getIPA += ' '; break;
         }
       }
-      if (/ci/g.test(getIPA)) { getIPA = getIPA.replace(/ci/g, 'ki'); }
-      if (/kyi/g.test(getRom)) { getRom = getRom.replace(/kyi/g, 'ki'); }
-
-      if (/sŋ/g.test(getIPA)) { getIPA = getIPA.replace(/sŋ/g, 'ŋ'); }
-      if (/sng/g.test(getRom)) { getRom = getRom.replace(/sng/g, 'ng'); }
-
-      if (/ʃʒ/g.test(getIPA)) { getIPA = getIPA.replace(/ʃʒ/g, 'ʒ'); }
-      if (/shzh/g.test(getRom)) { getRom = getRom.replace(/shzh/g, 'zh'); }
-
-      // if (/c$/.test(getIPA)) { getIPA = getIPA.replace(/c$/, 'k'); }
-      // if (/ky$/.test(getRom)) { getRom = getRom.replace(/ky$/, 'k'); }
-      // if (/ɲ$/.test(getIPA)) { getIPA = getIPA.replace(/ɲ$/, 'ŋ'); }
-      // if (/ny$/.test(getRom)) { getRom = getRom.replace(/ny$/, 'ng'); }
-
-      if (/(, )+/g.test(getRom)) { getRom = getRom.replace(/(, )+/g, ', '); }
-      if (/ +/g.test(getRom)) { getRom = getRom.replace(/ +/g, ' '); }
     }
+    [getIPA, getRom] = this.romanizationChange(getIPA, getRom);
     return { ...getWord, romanization: getRom, IPA: `/${getIPA}/` };
+  }
+
+  private romanizationChange(getIPA: string, getRom: string): string[] {
+    if (/ci/g.test(getIPA)) { getIPA = getIPA.replace(/ci/g, 'ki'); }
+    if (/kyi/g.test(getRom)) { getRom = getRom.replace(/kyi/g, 'ki'); }
+
+    if (/sŋ/g.test(getIPA)) { getIPA = getIPA.replace(/sŋ/g, 'ŋ'); }
+    if (/sng/g.test(getRom)) { getRom = getRom.replace(/sng/g, 'ng'); }
+
+    if (/ʃʒ/g.test(getIPA)) { getIPA = getIPA.replace(/ʃʒ/g, 'ʒ'); }
+    if (/shzh/g.test(getRom)) { getRom = getRom.replace(/shzh/g, 'zh'); }
+
+    if (/c$/.test(getIPA)) { getIPA = getIPA.replace(/c$/, 'k'); }
+    if (/ky$/.test(getRom)) { getRom = getRom.replace(/ky$/, 'k'); }
+
+    if (/ɲ$/.test(getIPA)) { getIPA = getIPA.replace(/ɲ$/, 'ŋ'); }
+    if (/ny$/.test(getRom)) { getRom = getRom.replace(/ny$/, 'ng'); }
+
+    if (/(, )+/g.test(getRom)) { getRom = getRom.replace(/(, )+/g, '$1'); }
+    if (/ +/g.test(getRom)) { getRom = getRom.replace(/ +/g, ' '); }
+    if (/ +/g.test(getIPA)) { getIPA = getIPA.replace(/ +/g, ' '); }
+    return [getIPA, getRom];
   }
 
   ngOnInit() {
