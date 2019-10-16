@@ -12,7 +12,8 @@ const appRoutes: Routes = [
   { path: 'phonology', component: PhonologyComponent },
   { path: 'grammar', component: GrammarComponent },
   { path: 'dictionary', component: DictionaryComponent },
-  { path: '', redirectTo: '/phonology', pathMatch: 'full' }
+  { path: '', redirectTo: '/phonology', pathMatch: 'full' },
+  { path: '**', redirectTo: '/phonology', pathMatch: 'full' }
 ];
 
 @NgModule({
