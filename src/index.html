@@ -10,6 +10,18 @@
   </head>
   <body>
     <app-root></app-root>
+    <canvas class="background"></canvas>
+    <script src="assets/particles.min.js"></script>
+    <script>
+      window.onload = () => Particles.init({
+        selector: '.background',
+        maxParticles: 250,
+        speed: 1,
+        connectParticles: true,
+        minDistance: 150,
+        color: ['#FF0', '#0FF', '#F0F']
+      });
+    </script>
   </body>
 </html>
 <!--

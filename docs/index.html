@@ -6,9 +6,21 @@
     <base href="https://MrMataNui.github.io/martian/">    <link href="https://www.vulgarlang.com/style/vulgar-style27.css" rel="stylesheet" />
     <link href="https://www.vulgarlang.com/pretty2.css" rel="stylesheet" />
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-  <link rel="stylesheet" href="styles.95a426cdcf35f6f79294.css"></head>
+  <link rel="stylesheet" href="styles.e928b64c7224e82c4092.css"></head>
   <body>
     <app-root></app-root>
+    <canvas class="background"></canvas>
+    <script src="assets/particles.min.js"></script>
+    <script>
+      window.onload = () => Particles.init({
+        selector: '.background',
+        maxParticles: 250,
+        speed: 1,
+        connectParticles: true,
+        minDistance: 150,
+        color: ['#FF0', '#0FF', '#F0F']
+      });
+    </script>
   <script src="runtime-es2015.e8a2810b3b08d6a1b6aa.js" type="module"></script><script src="runtime-es5.e8a2810b3b08d6a1b6aa.js" nomodule defer></script><script src="polyfills-es5.2b9ce34c123ac007a8ba.js" nomodule defer></script><script src="polyfills-es2015.0ef207fb7b4761464817.js" type="module"></script><script src="main-es2015.a76bd80733716ae6b35e.js" type="module"></script><script src="main-es5.a76bd80733716ae6b35e.js" nomodule defer></script></body>
 </html>
 <!--
