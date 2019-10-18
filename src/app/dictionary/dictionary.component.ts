@@ -1,7 +1,7 @@
 // tslint:disable:forin
 import { Component, OnInit } from '@angular/core';
 import { dictionary, English, Martian, Romanization } from './dictionary.modal';
-import { soundSymbol } from '../dictionary';
+import { soundSymbol } from '../dictionary.min';
 
 @Component({
   selector: 'app-dictionary',
@@ -9,31 +9,19 @@ import { soundSymbol } from '../dictionary';
   styleUrls: ['./dictionary.component.css']
 })
 export class DictionaryComponent implements OnInit {
-
-  constructor() {
-    this.englishRomanization = this.englishRomanization.bind(this);
-  }
+  constructor() { this.englishRomanization = this.englishRomanization.bind(this); }
   martianRom: Romanization[];
   englishRom: Romanization[];
-  martianShow = true;
-  englishShow = false;
+  martianShow = !0; englishShow = !1;
 
   dicionaryClick(event: any) {
     switch (event.target.id) {
-      case 'show-martian':
-        this.martianShow = true;
-        this.englishShow = false;
-        break;
-      case 'show-english':
-        this.martianShow = false;
-        this.englishShow = true;
-        break;
+      case 'show-martian': this.martianShow = !0; this.englishShow = !1; break;
+      case 'show-english': this.martianShow = !1; this.englishShow = !0; break;
     }
   }
   sorter(a: any, b: any): number {
-    [a, b] = (a.IPA)
-     ? [a.Martian, b.Martian]
-     : [a.English, b.English];
+    [a, b] = (a.IPA) ? [a.Martian, b.Martian] : [a.English, b.English];
     return (a < b) ? -1 : 1;
   }
 
@@ -78,10 +66,10 @@ export class DictionaryComponent implements OnInit {
   }
 
   englishRomanization(getWord: English | Martian): Romanization {
-    const getMartian = getWord.Martian.split('');
+    const getMartian: string[] = getWord.Martian.split('');
     let getRom = '';
     let getIPA = '';
-    let soundLetter: any;
+    let soundLetter: string | { sound: string; letter: string; romanization: string; };
     for (const MartianLetter in getMartian) {
       for (soundLetter in soundSymbol) {
         soundLetter = soundSymbol[soundLetter];

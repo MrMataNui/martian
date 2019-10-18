@@ -1,4 +1,4 @@
-import { marsDitionary } from '../dictionary';
+import { marsDitionary } from '../dictionary.min';
 
 export interface English {
   English: string;

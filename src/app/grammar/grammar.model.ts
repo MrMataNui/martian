@@ -3,12 +3,14 @@ export interface Words {
   adOrder: string;
   adposition: string;
 }
+
 export interface PartOfSpeech {
-  Subject: string;
-  Oblique: string;
-  Object: string;
+  Subj: string;
+  Obl: string;
+  Obj: string;
   Verb: string;
 }
+
 export interface Tenses {
   past: string;
   present: string;

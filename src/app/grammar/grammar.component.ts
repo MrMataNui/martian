@@ -7,17 +7,17 @@ import { Words, Tenses, PartOfSpeech } from './grammar.model';
   styleUrls: ['./grammar.component.css']
 })
 export class GrammarComponent implements OnInit {
-
   constructor() { }
   subscript = (word: string, type: string): string => `(${word})<sub> <b>${type}</b> </sub> `;
   getBrackets = (getString: string): string => `<b>[ </b> ${getString.trim()} <b> ]</b>`;
 
   partOfSpeech = (): PartOfSpeech => ({
-    Subject: this.subscript('Mary', 'Sub'),
-    Oblique: this.subscript('with a key', 'Obl'),
-    Object: this.subscript('the door', 'Obj'),
+    Obj: this.subscript('the door', 'Obj'),
+    Subj: this.subscript('Mary', 'Sub'),
     Verb: this.subscript('opened', 'Verb'),
+    Obl: this.subscript('with a key', 'Obl'),
   })
+
   word = (): Words => ({
     order: this.getBrackets('Object-Subject-Verb-Oblique'),
     adOrder: this.getBrackets('Adjectives are positioned after the noun'),
@@ -25,10 +25,10 @@ export class GrammarComponent implements OnInit {
   })
 
   getWordOrder(lang: string): string {
-    const { Subject, Verb, Object, Oblique } = this.partOfSpeech();
+    const { Subj, Verb, Obj, Obl } = this.partOfSpeech();
     switch (lang) {
-      case 'English': return this.getBrackets(Subject + Verb + Object + Oblique);
-      case 'Martian': return this.getBrackets(Object + Subject  + Verb + Oblique);
+      case 'English': return this.getBrackets(Subj + Verb + Obj + Obl);
+      case 'Martian': return this.getBrackets(Obj + Subj  + Verb + Obl);
     }
   }
 

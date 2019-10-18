@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { GrammarComponent } from './grammar.component';
 
 describe('GrammarComponent', () => {
@@ -8,9 +7,8 @@ describe('GrammarComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GrammarComponent ]
-    })
-    .compileComponents();
+      declarations: [GrammarComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +17,5 @@ describe('GrammarComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+  it('should create', () => expect(component).toBeTruthy());
 });

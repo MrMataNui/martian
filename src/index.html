@@ -14,20 +14,20 @@
     <script src="assets/particles.min.js"></script>
     <script>
       window.onload = () => Particles.init({
-        selector: '.background',
+        selector: 'canvas.background',
         maxParticles: 250,
-        speed: 1,
+        speed: 1.5,
         connectParticles: true,
         minDistance: 150,
-        color: ['#FF0', '#0FF', '#F0F']
+        color: ['#FF0', '#F0F', '#0FF']
       });
     </script>
   </body>
 </html>
 <!--
-ng build --output-path docs --prod --base-href "https://MrMataNui.github.io/martian/"
+npm run build
 ngh
 git add .
-git commit -m "Put the romanization into a different function"
+git commit -m "Minified dictionary.ts"
 git push origin
 -->

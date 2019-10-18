@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { DictionaryComponent } from './dictionary.component';
 
 describe('DictionaryComponent', () => {
@@ -8,9 +7,8 @@ describe('DictionaryComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DictionaryComponent ]
-    })
-    .compileComponents();
+      declarations: [DictionaryComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +17,5 @@ describe('DictionaryComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+  it('should create', () => expect(component).toBeTruthy());
 });

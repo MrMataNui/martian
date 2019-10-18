@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { PhonologyComponent } from './phonology.component';
 
 describe('PhonologyComponent', () => {
@@ -8,9 +7,8 @@ describe('PhonologyComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PhonologyComponent ]
-    })
-    .compileComponents();
+      declarations: [PhonologyComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +17,5 @@ describe('PhonologyComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+  it('should create', () => expect(component).toBeTruthy());
 });
