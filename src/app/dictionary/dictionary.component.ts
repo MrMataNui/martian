@@ -30,8 +30,8 @@ export class DictionaryComponent implements OnInit {
     for (const word in martian) {
       martianDicionary += `<li>
         <span class="martian">${martian[word].Martian}</span> <b>|</b>
-        <rom>(${martian[word].romanization})</rom> <b>|</b>
-        <ipa>${martian[word].IPA}</ipa> <b>|</b>
+        <span class="rom">(${martian[word].romanization})</span> <b>|</b>
+        /<span class="ipa">${martian[word].IPA}</span>/ <b>|</b>
         <span class="pos">${martian[word].POS}</span> <b>|</b>
         <b>${martian[word].English}</b>
       </li>`;
@@ -43,14 +43,14 @@ export class DictionaryComponent implements OnInit {
     let englishDicionary = '';
     for (const word in english) {
       if (english[word].English === 'i') { english[word].English = 'I'; }
-      let wordGet = `<b>${english[word].English}</b> <b>|</b>
-      <span class="pos">${english[word].POS}</span> <b>|</b>
-      <span class="martian">${english[word].Martian}</span> <b>|</b>
-      <span class="rom">(${english[word].romanization})</span>`;
+      let wordGet = `<b>${english[word].English}</b>
+				<b>|</b> <span class="pos">${english[word].POS}</span>
+				<b>|</b> <span class="martian">${english[word].Martian}</span>
+				<b>|</b> <span class="rom">(${english[word].romanization})</span>`;
 
-      const template = (POS: string, martianWord: string) => ` <b>|</b> <span class="pos">${POS}</span>
+      const template = (POS: string, martianWord: string) => `
+				<b>|</b> <span class="pos">${POS}</span>
         <b>|</b> <span class="martian">${martianWord}</span>`;
-
       if (english[word].POS2) {
         wordGet += template(english[word].POS2, english[word].Martian2);
         if (english[word].POS3) {
@@ -84,7 +84,7 @@ export class DictionaryComponent implements OnInit {
       }
     }
     [getIPA, getRom] = this.romanizationChange(getIPA, getRom);
-    return { ...getWord, romanization: getRom, IPA: `/${getIPA}/` };
+    return { ...getWord, romanization: getRom, IPA: getIPA };
   }
 
   private romanizationChange(getIPA: string, getRom: string): string[] {

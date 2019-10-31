@@ -13,14 +13,11 @@ export class PhonologyComponent implements OnInit {
     let romanization = '<th> Romanization </th>';
     let letters = '<th> Letter </th>';
     soundSymbol.forEach(word => {
-      sounds += `<td> <span class="ipa">/${word.sound}/</span> </td>`;
+      sounds += `<td> /<span class="ipa">${word.sound}</span>/ </td>`;
       romanization += `<td> ${word.romanization} </td>`;
       letters += `<td> <span class="martian">${word.letter}</span> </td>`;
     });
-    const html = `<table> <tr>${letters}</tr> <tr>${romanization}</tr> <tr>${sounds}</tr> </table>`;
-    // $('#spell-rules-data').html(html);
-    // console.log('html', html);
-    return html;
+    return `<tr>${letters}</tr> <tr>${romanization}</tr> <tr>${sounds}</tr>`;
   }
   ngOnInit() {}
 }

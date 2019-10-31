@@ -2,16 +2,14 @@
   <h2 class="head-phon">Spelling & Phonology</h2>
   <div id="spell-rules">
     <div id="spell-rules-info">
-      <div id="spelling_rules">
-        <p> Spelling rules: </p>
-      </div>
-      <div id="spell-rules-data" [innerHTML]="getSpellingRules()"></div>
+      <div id="spelling_rules"> <p> Spelling rules: </p> </div>
+			<table id="spell-rules-table" [innerHTML]="getSpellingRules()"></table>
     </div>
   </div>
   <div id="consonants">
     <div id="cons-inv"></div>
     <div id="bigcontab" class="table-tab">
-      <p> Consonant inventory: <span class="ipa">/c f j l m n s t x ŋ ɲ ɾ ʃ ʒ ʔ ʤ ʧ/</span> </p>
+      <p> Consonant inventory: /<span class="ipa">c f j l m n s t x ŋ ɲ ɾ ʃ ʒ ʔ ʤ ʧ</span>/ </p>
       <table id="consonants-table">
         <tr>
           <th>↓Manner/Place→</th>
@@ -98,7 +96,7 @@
   </div>
   <div id="vowels">
     <div id="vow-inv">
-      <p> Vowel inventory: <span class="ipa">/e i u æ ɔ ə/</span>
+      <p> Vowel inventory: /<span class="ipa">e i u æ ɔ ə</span>/
       </p>
     </div>
     <div id="VFS" style="display: none;">
@@ -229,11 +227,11 @@
       <p> Syllable structure: (C)(C)V(C) </p>
       <p> Stress pattern: advanced </p>
       <p> Word initial consonants: </p>
-      <span class="ipa">/c, f, fl, j, l, m, n, s, sf, sl, sn, st, sŋ, t, x, ŋ, ɲ, ɾ, ʃ, ʒ, ʔ, ʤ, ʧ/</span>
+      /<span class="ipa">c, f, fl, j, l, m, n, s, sf, sl, sn, st, sŋ, t, x, ŋ, ɲ, ɾ, ʃ, ʒ, ʔ, ʤ, ʧ</span>/
       <p> Mid-word consonants: </p>
-      <span class="ipa">/c, f, j, jɲ, jɾ, l, lʧ, m, n, ns, s, t, ts, x, ŋ, ɲ, ɾ, ɾs, ʃ, ʒ, ʔ, ʤ, ʧ/</span>
+      /<span class="ipa">c, f, j, jɲ, jɾ, l, lʧ, m, n, ns, s, t, ts, x, ŋ, ɲ, ɾ, ɾs, ʃ, ʒ, ʔ, ʤ, ʧ</span>/
       <p> Word final consonants: </p>
-      <span class="ipa">/c, l, m, n, s, ɲ, ɾ, ʃ, ʒ, ʤ/</span>
+      /<span class="ipa">c, l, m, n, s, ɲ, ɾ, ʃ, ʒ, ʤ</span>/
       <div id="CFS" style="display: none;">
         <p> Show frequency stats </p>
         <p> Word initial: ɲ=22 ʃ=17 f=15 ŋ=13 ʔ=12 ʤ=11 c=11 l=10 m=10 n=9 x=9 ɾ=9 s=8 t=8 ʧ=8 j=8 ʒ=8 sf=22 fl=17
@@ -248,13 +246,13 @@
           <p> Phonological rules (in order of application): </p>
         </div>
         <div id="phon-rules-data">
-          <li class="b"> n → l / #_ </li>
-          <li class="b"> s → h / V_V </li>
-          <li class="b"> j → Ø / #_ </li>
-          <li class="b"> i → e / _C </li>
-          <li class="b"> N → w / S_S </li>
-          <li class="b"> m → w / #_ </li>
-          <li class="b"> ɲ → ŋ / _# </li>
+          <li class="b ipa">n → l / #_ </li>
+          <li class="b ipa">s → h / V_V </li>
+          <li class="b ipa">j → Ø / #_ </li>
+          <li class="b ipa">i → e / _C </li>
+          <li class="b ipa">N → w / S_S </li>
+          <li class="b ipa">m → w / #_ </li>
+          <li class="b ipa">ɲ → ŋ / _# </li>
           <p> <a href="https://www.vulgarlang.com/phonological-rules" target="_blank">
               How to read phonological rules
             </a> </p>

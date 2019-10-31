@@ -3,23 +3,31 @@ body {
   margin: 0 auto;
 }
 
-h2,
-h3 {
-  font-size: 120%;
-  margin: 0;
-  padding: 0.25em 0 0.5em;
-}
-
-h1, h2, h3, h4 { text-align: center; }
+h1, h2, h3, h4 { text-align: center; color: #04c; font-weight: bold; }
 
 h1, h2 { text-align: center; font-family: 'Black Ops One', serif, cursive; }
+h2, h3 { font-size: 120%; margin: 0; padding: 0.25em 0 0.5em; }
+
 h2 { color: #a569bd; font-family: 'Audiowide', serif, cursive; }
 h3 { color: #152283; font-family: 'Fugaz One', serif, cursive; }
 h4 { color: #5f71fb; font-family: 'Fugaz One', serif, cursive; }
 
-h1, h2, h3, h4 { color: #04c; font-weight: bold; }
+h1, h2, h3, h4,
+.head-langname,
+.megrim,
+[id^='nav-'],
+button[id^='show-'] {
+	font-family: 'Megrim', cursive;
+}
+
+button[id^='show-'] { font-weight: bold; }
 
 p { text-align: center; }
+
+
+#vowel-graph span span,
+#consonants-table td,
+.ipa { font-family: 'Judson', serif; }
 
 #top {
   margin: 0;
@@ -51,41 +59,6 @@ table {
   width: 95%;
 }
 
-#vowel-graph {
-  position: relative;
-  height: 224px;
-  width: 320px;
-  font-size: 110%;
-  background: transparent;
-}
-
-#vowel-graph tr { background-color: transparent; }
-
-#vowel-graph tr span {
-  position: absolute;
-  left: 0px;
-  text-align: right;
-}
-
-#vowel-graph tr span span {
-  padding: 0px 1px 0px 2px;
-}
-
-#vowel-graph div {
-  height: 1px;
-  width: 60px;
-  position: absolute;
-  background: transparent;
-}
-
-#vowel-table {
-  text-align: center;
-  font-size: 125%;
-  font-weight: bold;
-  background: #f2f2ce;
-  font-weight: bold;
-}
-
 th, td {
   border: 1px dashed black;
   vertical-align: center;
@@ -104,8 +77,6 @@ tr:nth-child(even),#verbs tr:nth-child(odd) { background-color: #eee; }
 br { clear: left; }
 
 .right { text-align: right; }
-#spell-rules-data table { width: 100%; }
-#spell-rules { padding: 0px 20px 20px; }
 
 .backward {
   display: inline-block;
@@ -121,21 +92,10 @@ br { clear: left; }
   font-style: normal;
 }
 
-martian,
-.martian {
+martian, .martian {
   font-family: Martian;
   font-size: 110%;
   font-style: normal;
-}
-
-#consonants-table td { align-self: center; }
-
-#vowel-table2 {
-  position: relative;
-  line-height: 1.4em;
-  background: transparent;
-  background: #f9f9f9;
-  margin: 0em auto 0em auto;
 }
 
 .dbq { quotes: '“' '”'; }
@@ -157,11 +117,7 @@ q, .quotes { quotes: '‘' '’'; }
   width: 100%;
 }
 
-#head-nav li:not(.right) {
-  float: left;
-  border-right: 1px solid #bbb;
-}
-
+#head-nav li:not(.right) { float: left; border-right: 1px solid #bbb; }
 #head-nav li a {
   display: block;
   color: white;
@@ -171,17 +127,13 @@ q, .quotes { quotes: '‘' '’'; }
 }
 
 #head-nav li a:hover:not(.active) { background-color: #111; }
-
 #head-nav .active { background-color: #4caf50; }
 
 .right { float: right; }
 .right.border { border-right: 1px solid #bbb; }
 .right.Lborder { border-left: 1px solid #bbb; }
 
-#phon-other {
-  display: inline-block;
-  max-width: initial;
-}
+#phon-other { display: inline-block; max-width: initial; }
 
 canvas.background {
   background-color: blueviolet;
