@@ -1,82 +1,82 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title> {{ title }} </title>
-    <base href="/{{low(title)}}/" />
-    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
-  </head>
-  <body>
-    <nav id="head-nav">
-      <ul>
-        <li *ngFor="let key of navLinks" id="{{ids[low(key)]}}">
-          <a routerLink="/{{low(key)}}" routerLinkActive="active"> {{ key }} </a>
-        </li>
-        <li class="right megrim"> <a href="https://mrmatanui.github.io">Home</a> </li>
-        <li class="right megrim"> <a href="https://mrmatanui.github.io/claymation/"> Claymation </a> </li>
-        <li class="right border"> <a href="https://twitter.com/MrMataNui/" target="_break">Twitter</a> </li>
-        <li class="right Lborder"> <a href="https://www.reddit.com/user/MrMataNui/" target="_break">Reddit</a> </li>
-      </ul>
-    </nav>
-    <div id="lang-name" class="output">
-      <h1 class="head-langname">The Language of Martian</h1>
-      <h2 class="center">
-        Natively known as: <span class="martian">XWHEXW</span>
-        /<span class="ipa">ʧəˈʔeʧə</span>/
-      </h2>
-      <div id="lang-sentence">
-        <span class="pos">...and he stood holding his hat and turned his wet face to the wind...</span>
-        <br />
-        <span class="martian">
-          <span class="dbq">KO SFUJE DIL,NUZEN SLWDUYRIR JIL,KO NUZEN SGOCA SLWK,AL SNUAL HE</span>
-        </span>
-        <br />
-        <p>
-          <b>Pronunciation: </b>
-          /<span class="ipa">cɔ sfuˈʤe ʃil nuˈʒen sləʃuˈjɾiɾ ʤil cɔ nuˈʒen ŋɔˈɲæ sləc æl snuˈæl ʔe</span>/
-        </p>
-        <p> <b>Martian word order</b>: ...and he stood, hat his holding, and his face wet, turned the wind to... </p>
-      </div>
-      <div id="togTrans" style="display: none">
-        <div class="center">
-          Note: Translator does not automatically do word order and only finds exact matches in your dictionary (will
-          not find plurals, past-tense, etc.) However, all available affixes in the language may be used. Making the
-          translator smarter is a work in progress. Sentence:
-        </div>
-        <textarea id="toTranslate" spellcheck="false" rows="4" cols="55" type="textarea" name="in"></textarea>
-        <input type="button" class="button0 but button10" value="Translate" onclick="doTrans()">
-        Translation:
-        <p id="translated">
-          Affixes in this language:
-          ADJ.TO.ADV
-          <span class="d">|</span> ADJ.TO.NOUN
-          <span class="d">|</span> ADJ.TO.VERB
-          <span class="d">|</span> AUG
-          <span class="d">|</span> DIM
-          <span class="d">|</span> DOER
-          <span class="d">|</span> NOUN.A.ACC.DEF
-          <span class="d">|</span> NOUN.A.ACC.INDEF
-          <span class="d">|</span> NOUN.A.NOM.DEF
-          <span class="d">|</span> NOUN.A.NOM.INDEF
-          <span class="d">|</span> NOUN.IA.ACC.DEF
-          <span class="d">|</span> NOUN.IA.ACC.INDEF
-          <span class="d">|</span> NOUN.IA.NOM.DEF
-          <span class="d">|</span> NOUN.IA.NOM.INDEF
-          <span class="d">|</span> NOUN.TO.ADJ
-          <span class="d">|</span> NOUN.TO.VERB
-          <span class="d">|</span> PLACE
-          <span class="d">|</span> VERB.PAST.A
-          <span class="d">|</span> VERB.PAST.IA
-          <span class="d">|</span> VERB.PERF
-          <span class="d">|</span> VERB.PRES.A
-          <span class="d">|</span> VERB.PRES.IA
-          <span class="d">|</span> VERB.TO.ADJ
-          <span class="d">|</span> VERB.TO.NOUN
-        </p>
-      </div>
-      <div id="lang-seed" style="display: none"> <span>Seed for this language:</span> 5892224008298317 </div>
-    </div>
-    <hr />
-    <router-outlet></router-outlet>
-  </body>
+	<head>
+		<meta charset="utf-8" />
+		<title> {{ title }} </title>
+		<base href="/{{low(title)}}/" />
+		<link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
+	</head>
+	<body>
+		<nav id="head-nav">
+			<ul>
+				<li *ngFor="let key of navLinks" id="{{ids[low(key)]}}">
+					<a routerLink="/{{low(key)}}" routerLinkActive="active"> {{ key }} </a>
+				</li>
+				<li class="right megrim"> <a href="https://mrmatanui.github.io">Home</a> </li>
+				<li class="right megrim"> <a href="https://mrmatanui.github.io/claymation/"> Claymation </a> </li>
+				<li class="right border"> <a href="https://twitter.com/MrMataNui/" target="_break">Twitter</a> </li>
+				<li class="right Lborder"> <a href="https://www.reddit.com/user/MrMataNui/" target="_break">Reddit</a> </li>
+			</ul>
+		</nav>
+		<div id="lang-name" class="output">
+			<h1 class="head-langname">The Language of Martian</h1>
+			<h2 class="center">
+				Natively known as: <span class="martian">XWHEXW</span>
+				/<span class="ipa">ʧəˈʔeʧə</span>/
+			</h2>
+			<div id="lang-sentence">
+				<span class="pos">...and he stood holding his hat and turned his wet face to the wind...</span>
+				<br />
+				<span class="martian">
+					<span class="dbq">KO SFUJE DIL,NUZEN SLWDUYRIR JIL,KO NUZEN SGOCA SLWK,AL SNUAL HE</span>
+				</span>
+				<br />
+				<p>
+					<b>Pronunciation: </b>
+					/<span class="ipa">cɔ sfuˈʤe ʃil nuˈʒen sləʃuˈjɾiɾ ʤil cɔ nuˈʒen ŋɔˈɲæ sləc æl snuˈæl ʔe</span>/
+				</p>
+				<p> <b>Martian word order</b>: ...and he stood, hat his holding, and his face wet, turned the wind to... </p>
+			</div>
+			<div id="togTrans" style="display: none">
+				<div class="center">
+					Note: Translator does not automatically do word order and only finds exact matches in your dictionary (will
+					not find plurals, past-tense, etc.) However, all available affixes in the language may be used. Making the
+					translator smarter is a work in progress. Sentence:
+				</div>
+				<textarea id="toTranslate" spellcheck="false" rows="4" cols="55" type="textarea" name="in"></textarea>
+				<input type="button" class="button0 but button10" value="Translate" onclick="doTrans()">
+				Translation:
+				<p id="translated">
+					Affixes in this language:
+					ADJ.TO.ADV
+					<span class="d">|</span> ADJ.TO.NOUN
+					<span class="d">|</span> ADJ.TO.VERB
+					<span class="d">|</span> AUG
+					<span class="d">|</span> DIM
+					<span class="d">|</span> DOER
+					<span class="d">|</span> NOUN.A.ACC.DEF
+					<span class="d">|</span> NOUN.A.ACC.INDEF
+					<span class="d">|</span> NOUN.A.NOM.DEF
+					<span class="d">|</span> NOUN.A.NOM.INDEF
+					<span class="d">|</span> NOUN.IA.ACC.DEF
+					<span class="d">|</span> NOUN.IA.ACC.INDEF
+					<span class="d">|</span> NOUN.IA.NOM.DEF
+					<span class="d">|</span> NOUN.IA.NOM.INDEF
+					<span class="d">|</span> NOUN.TO.ADJ
+					<span class="d">|</span> NOUN.TO.VERB
+					<span class="d">|</span> PLACE
+					<span class="d">|</span> VERB.PAST.A
+					<span class="d">|</span> VERB.PAST.IA
+					<span class="d">|</span> VERB.PERF
+					<span class="d">|</span> VERB.PRES.A
+					<span class="d">|</span> VERB.PRES.IA
+					<span class="d">|</span> VERB.TO.ADJ
+					<span class="d">|</span> VERB.TO.NOUN
+				</p>
+			</div>
+			<div id="lang-seed" style="display: none"> <span>Seed for this language:</span> 5892224008298317 </div>
+		</div>
+		<hr />
+		<router-outlet></router-outlet>
+	</body>
 </html>

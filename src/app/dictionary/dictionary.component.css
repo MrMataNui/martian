@@ -1,16 +1,16 @@
 .lexi-flex {
-  display: flex;
-  justify-content: space-around;
-  width: 50%;
-  margin: 0 auto;
+	display: flex;
+	justify-content: space-around;
+	width: 50%;
+	margin: 0 auto;
 }
 
 .center {
-  text-align: center;
+	text-align: center;
 }
 
 #show-martian,
 #show-english {
-  cursor: pointer;
-  height: 2em;
+	cursor: pointer;
+	height: 2em;
 }
