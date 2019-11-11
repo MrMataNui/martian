@@ -5,9 +5,7 @@
 	margin: 0 auto;
 }
 
-.center {
-	text-align: center;
-}
+.center { text-align: center; }
 
 #show-martian,
 #show-english {

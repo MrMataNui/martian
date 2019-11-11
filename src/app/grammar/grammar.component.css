@@ -1,6 +1,4 @@
-#main-word-order {
-		text-align: center;
-}
+#main-word-order { text-align: center; }
 
 #word-order-example {
 	background-color: #ABD;
@@ -8,7 +6,4 @@
 	margin: auto;
 }
 
-#lang-grammar {
-	margin-top: initial;
-	border-top: initial;
-}
+#lang-grammar { margin-top: initial; border-top: initial; }

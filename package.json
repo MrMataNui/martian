@@ -5,7 +5,7 @@
     "start": "ng serve",
     "lint": "ng lint --fix",
     "build": "npm run lint && ng build --output-path docs --prod --base-href \"https://MrMataNui.github.io/martian/\"",
-    "push": "git add . && git commit -m \"used ts-lint\" && git push origin",
+    "push": "git add . && git commit -m \"Added mobie suppourt\" && git push origin",
     "ng": "ng",
     "clean": "rm -rf ./node_modules",
     "reinstall": "npm run clean && npm install",

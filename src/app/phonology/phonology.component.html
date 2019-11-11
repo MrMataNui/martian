@@ -1,263 +1,263 @@
 <div id="lang-phon">
-	<h2 class="head-phon">Spelling & Phonology</h2>
-	<div id="spell-rules">
-		<div id="spell-rules-info">
-			<div id="spelling_rules"> <p> Spelling rules: </p> </div>
-			<table id="spell-rules-table" [innerHTML]="getSpellingRules()"></table>
-		</div>
-	</div>
-	<div id="consonants">
-		<div id="cons-inv"></div>
-		<div id="bigcontab" class="table-tab">
-			<p> Consonant inventory: /<span class="ipa">c f j l m n s t x ŋ ɲ ɾ ʃ ʒ ʔ ʤ ʧ</span>/ </p>
-			<table id="consonants-table">
-				<tr>
-					<th>↓Manner/Place→</th>
-					<th>Bilabial</th>
-					<th>Labiodental</th>
-					<th>Alveolar</th>
-					<th>Palato-alveolar</th>
-					<th>Palatal</th>
-					<th>Velar</th>
-					<th>Glottal</th>
-				</tr>
-				<tr>
-					<th>Nasal</th>
-					<td>m</td>
-					<td></td>
-					<td>n</td>
-					<td></td>
-					<td>ɲ</td>
-					<td>ŋ</td>
-					<td></td>
-				</tr>
-				<tr>
-					<th>Stop</th>
-					<td></td>
-					<td></td>
-					<td>t</td>
-					<td></td>
-					<td>c</td>
-					<td></td>
-					<td>ʔ</td>
-				</tr>
-				<tr>
-					<th>Affricate</th>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td>ʧ ʤ</td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<th>Fricative</th>
-					<td></td>
-					<td>f</td>
-					<td>s</td>
-					<td>ʃ ʒ</td>
-					<td></td>
-					<td>x</td>
-					<td></td>
-				</tr>
-				<tr>
-					<th>Approximant</th>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td>j</td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<th>Tap</th>
-					<td></td>
-					<td></td>
-					<td>ɾ</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<th>Lateral approximant</th>
-					<td></td>
-					<td></td>
-					<td>l</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-			</table>
-		</div>
-	</div>
-	<div id="vowels">
-		<div id="vow-inv">
-			<p> Vowel inventory: /<span class="ipa">e i u æ ɔ ə</span>/
-			</p>
-		</div>
-		<div id="VFS" style="display: none;">
-			<p>Show frequency stats</p>
-			<p>æ=8 e=6 i=5 ɔ=5 u=5 ə=4</p>
-		</div>
-		<div id="bigvowtab">
-			<br />
-			<table id="vowel-table" style="border-style: solid;">
-				<tr>
-					<th colspan="2">IPA vowel chart</th>
-				</tr>
-				<tr>
-					<td colspan="2" style="text-align:center">
-						<table id="vowel-table2">
-							<tr style="text-align:center;">
-								<td></td>
-								<td style="width:64px;"> <span style="position:relative;">Front</span> </td>
-								<td style="width:62px;">Near-​front</td>
-								<td style="width:64px;">Central</td>
-								<td style="width:62px;">Near-​back</td>
-								<td style="width:64px;">Back</td>
-							</tr>
-							<tr>
-								<td style="text-align:right;"> <b>High</b> </td>
-								<td colspan="5" rowspan="7">
-									<div style="position:relative;">
-										<img src="https://www.vulgarlang.com/images/320px-Blank_vowel_trapezoid.svg.png" height="224"
-											width="320" data-file-height="700" data-file-width="1000" alt="Blank vowel trapezoid.svg"
-											srcset="https://www.vulgarlang.com/images/480px-Blank_vowel_trapezoid.svg.png 1.5x, https://www.vulgarlang.com/images/640px-Blank_vowel_trapezoid.svg.png 2x" />
-										<div style="background:transparent; position:absolute; top:0px; left:0px;">
-											<table id="vowel-graph">
-												<tr>
-													<td>
-														<div style="top:8px; left:38px;">
-															<span class="span1"> <span class="span2 color">i&#160;&#160;</span> </span>
-														</div>
-														<div style="top:8px; left:163px;">
-															<span class="span1"> <span class="span2 transparent">&#160;&#160;</span> </span>
-														</div>
-														<div style="top:8px; left:285px;">
-															<span class="span1"> <span class="span2 color">&#160;&#160;u</span> </span>
-														</div>
-														<div style="top:39px; left:120px;">
-															<span class="span1"> <span class="span2 transparent">&#160;&#160;</span> </span>
-														</div>
-														<div style="top:39px; left:175px;">
-															<span class="span1"> <span class="span2 transparent">&#160;&#160;</span> </span>
-														</div>
-														<div style="top:39px; left:230px;">
-															<span class="span1"> <span class="span2 transparent">&#160;&#160;</span> </span>
-														</div>
-														<div style="top:72px; left:74px;">
-															<span class="span1"> <span class="span2 color">e&#160;&#160;</span> </span>
-														</div>
-														<div style="top:72px; left:181px;">
-															<span class="span1"> <span class="span2 transparent">&#160;&#160;</span> </span>
-														</div>
-														<div style="top:72px; left:285px;">
-															<span class="span1"> <span class="span2 transparent">&#160;&#160;</span> </span>
-														</div>
-														<div style="top:103px; left:95px;">
-															<span class="span1"> <span class="span2 transparent">&#160;&#160;</span> </span>
-														</div>
-														<div style="top:103px; left:197px;">
-															<span class="span1"> <span class="span2 color">ə&#160;&#160;</span> </span>
-														</div>
-														<div style="top:103px; left:285px;">
-															<span class="span1"> <span class="span2 transparent">&#160;&#160;</span> </span>
-														</div>
-														<div style="top:136px; left:119px;">
-															<span class="span1"> <span class="span2 transparent">&#160;&#160;</span> </span>
-														</div>
-														<div style="top:136px; left:202px;">
-															<span class="span1"> <span class="span2 transparent">&#160;&#160;</span> </span>
-														</div>
-														<div style="top:136px; left:285px;">
-															<span class="span1"> <span class="span2 color">&#160;&#160;ɔ</span> </span>
-														</div>
-														<div style="top:167px; left:133px;">
-															<span class="span1"> <span class="span2 color">æ&#160;&#160;</span> </span>
-														</div>
-														<div style="top:167px; left:212px;">
-															<span class="span1"> <span class="span2 transparent">&#160;&#160;</span> </span>
-														</div>
-														<div style="top:199px; left:160px;">
-															<span class="span1"> <span class="span2 transparent">&#160;&#160;</span> </span>
-														</div>
-														<div style="top:199px; left:223px;">
-															<span class="span1"> <span class="span2 transparent">&#160;&#160;</span> </span>
-														</div>
-														<div style="top:199px; left:286px;">
-															<span class="span1"> <span class="span2 transparent">&#160;&#160;</span> </span>
-														</div>
-													</td>
-												</tr>
-											</table>
-										</div>
-									</div>
-								</td>
-							</tr>
-							<tr>
-								<td style="text-align:right;">Near-&nbsp;high</td>
-							</tr>
-							<tr>
-								<td style="text-align:right;">High-&nbsp;mid</td>
-							</tr>
-							<tr>
-								<td style="text-align:right;"> <b>Mid</b> </td>
-							</tr>
-							<tr>
-								<td style="text-align:right;">Low-&nbsp;mid</td>
-							</tr>
-							<tr>
-								<td style="text-align:right;">Near-&nbsp;Low</td>
-							</tr>
-							<tr>
-								<td style="height:32px; text-align:right;"> <b>Low</b> </td>
-							</tr>
-						</table>
-					</td>
-				</tr>
-			</table>
-		</div>
-	</div>
-	<div id="phon-other">
-		<div id="syll-struct">
-			<p> Syllable structure: (C)(C)V(C) </p>
-			<p> Stress pattern: advanced </p>
-			<p> Word initial consonants: </p>
-			/<span class="ipa">c, f, fl, j, l, m, n, s, sf, sl, sn, st, sŋ, t, x, ŋ, ɲ, ɾ, ʃ, ʒ, ʔ, ʤ, ʧ</span>/
-			<p> Mid-word consonants: </p>
-			/<span class="ipa">c, f, j, jɲ, jɾ, l, lʧ, m, n, ns, s, t, ts, x, ŋ, ɲ, ɾ, ɾs, ʃ, ʒ, ʔ, ʤ, ʧ</span>/
-			<p> Word final consonants: </p>
-			/<span class="ipa">c, l, m, n, s, ɲ, ɾ, ʃ, ʒ, ʤ</span>/
-			<div id="CFS" style="display: none;">
-				<p> Show frequency stats </p>
-				<p> Word initial: ɲ=22 ʃ=17 f=15 ŋ=13 ʔ=12 ʤ=11 c=11 l=10 m=10 n=9 x=9 ɾ=9 s=8 t=8 ʧ=8 j=8 ʒ=8 sf=22 fl=17
-					st=13 sŋ=11 sn=11 sl=10 </p>
-				<p> Mid-word: c=22 ʒ=17 x=15 ʤ=13 ɾ=12 ʃ=11 ʔ=11 ʧ=10 f=10 ɲ=9 ŋ=9 l=9 t=8 s=8 n=8 j=8 m=8 jɾ=22 ns=15
-					jɲ=12 ts=11 ɾs=9 lʧ=8Word final: c=22 ʒ=17 ʤ=13 ɾ=12 ʃ=11 ɲ=9 l=9 s=8 n=8 m=8 </p>
-			</div>
-		</div>
-		<div id="phon-rules">
-			<div id="phon-rules-info">
-				<div id="phonological_rules">
-					<p> Phonological rules (in order of application): </p>
-				</div>
-				<div id="phon-rules-data">
-					<li class="b ipa">n → l / #_ </li>
-					<li class="b ipa">s → h / V_V </li>
-					<li class="b ipa">j → Ø / #_ </li>
-					<li class="b ipa">i → e / _C </li>
-					<li class="b ipa">N → w / S_S </li>
-					<li class="b ipa">m → w / #_ </li>
-					<li class="b ipa">ɲ → ŋ / _# </li>
-					<p> <a href="https://www.vulgarlang.com/phonological-rules" target="_blank">
-							How to read phonological rules
-						</a> </p>
-				</div>
-			</div>
-		</div>
-	</div>
+  <h2 class="head-phon">Spelling & Phonology</h2>
+  <div id="spell-rules">
+    <div id="spell-rules-info">
+      <div id="spelling_rules">
+        <p> Spelling rules: </p>
+      </div>
+      <table id="spell-rules-table" [innerHTML]="getSpellingRules()"></table>
+    </div>
+  </div>
+  <div id="consonants">
+    <div id="cons-inv"></div>
+    <div id="bigcontab" class="table-tab">
+      <p> Consonant inventory: /<span class="ipa">c f j l m n s t x ŋ ɲ ɾ ʃ ʒ ʔ ʤ ʧ</span>/ </p>
+      <table id="consonants-table">
+        <tr>
+          <th>↓Manner/Place→</th>
+          <th>Bilabial</th>
+          <th>Labiodental</th>
+          <th>Alveolar</th>
+          <th>Palato-alveolar</th>
+          <th>Palatal</th>
+          <th>Velar</th>
+          <th>Glottal</th>
+        </tr>
+        <tr>
+          <th>Nasal</th>
+          <td>m</td>
+          <td></td>
+          <td>n</td>
+          <td></td>
+          <td>ɲ</td>
+          <td>ŋ</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>Stop</th>
+          <td></td>
+          <td></td>
+          <td>t</td>
+          <td></td>
+          <td>c</td>
+          <td></td>
+          <td>ʔ</td>
+        </tr>
+        <tr>
+          <th>Affricate</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>ʧ ʤ</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>Fricative</th>
+          <td></td>
+          <td>f</td>
+          <td>s</td>
+          <td>ʃ ʒ</td>
+          <td></td>
+          <td>x</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>Approximant</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>j</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>Tap</th>
+          <td></td>
+          <td></td>
+          <td>ɾ</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>Lateral approximant</th>
+          <td></td>
+          <td></td>
+          <td>l</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="vowels">
+    <div id="vow-inv">
+      <p> Vowel inventory: /<span class="ipa">e i u æ ɔ ə</span>/
+      </p>
+    </div>
+    <div id="VFS" style="display: none;">
+      <p>Show frequency stats</p>
+      <p>æ=8 e=6 i=5 ɔ=5 u=5 ə=4</p>
+    </div>
+    <div id="bigvowtab">
+      <br />
+      <table id="vowel-table" style="border-style: solid;">
+        <tr>
+          <th colspan="2">IPA vowel chart</th>
+        </tr>
+        <tr>
+          <td colspan="2" style="text-align:center">
+            <table id="vowel-table2">
+              <tr style="text-align:center;">
+                <td></td>
+                <td style="width:64px;"> <span style="position:relative;">Front</span> </td>
+                <td style="width:62px;">Near-​front</td>
+                <td style="width:64px;">Central</td>
+                <td style="width:62px;">Near-​back</td>
+                <td style="width:64px;">Back</td>
+              </tr>
+              <tr>
+                <td style="text-align:right;"> <b>High</b> </td>
+                <td colspan="5" rowspan="7">
+                  <div style="position:relative;">
+                    <img src="https://www.vulgarlang.com/images/320px-Blank_vowel_trapezoid.svg.png" height="224"
+                      width="320" data-file-height="700" data-file-width="1000" alt="Blank vowel trapezoid.svg"
+                      srcset="https://www.vulgarlang.com/images/480px-Blank_vowel_trapezoid.svg.png 1.5x, https://www.vulgarlang.com/images/640px-Blank_vowel_trapezoid.svg.png 2x" />
+                    <div style="background:transparent; position:absolute; top:0px; left:0px;">
+                      <table id="vowel-graph">
+                        <tr>
+                          <td>
+                            <div style="top:8px; left:38px;">
+                              <span class="span1"> <span class="span2 color">i&#160;&#160;</span> </span>
+                            </div>
+                            <div style="top:8px; left:163px;">
+                              <span class="span1"> <span class="span2 transparent">&#160;&#160;</span> </span>
+                            </div>
+                            <div style="top:8px; left:285px;">
+                              <span class="span1"> <span class="span2 color">&#160;&#160;u</span> </span>
+                            </div>
+                            <div style="top:39px; left:120px;">
+                              <span class="span1"> <span class="span2 transparent">&#160;&#160;</span> </span>
+                            </div>
+                            <div style="top:39px; left:175px;">
+                              <span class="span1"> <span class="span2 transparent">&#160;&#160;</span> </span>
+                            </div>
+                            <div style="top:39px; left:230px;">
+                              <span class="span1"> <span class="span2 transparent">&#160;&#160;</span> </span>
+                            </div>
+                            <div style="top:72px; left:74px;">
+                              <span class="span1"> <span class="span2 color">e&#160;&#160;</span> </span>
+                            </div>
+                            <div style="top:72px; left:181px;">
+                              <span class="span1"> <span class="span2 transparent">&#160;&#160;</span> </span>
+                            </div>
+                            <div style="top:72px; left:285px;">
+                              <span class="span1"> <span class="span2 transparent">&#160;&#160;</span> </span>
+                            </div>
+                            <div style="top:103px; left:95px;">
+                              <span class="span1"> <span class="span2 transparent">&#160;&#160;</span> </span>
+                            </div>
+                            <div style="top:103px; left:197px;">
+                              <span class="span1"> <span class="span2 color">ə&#160;&#160;</span> </span>
+                            </div>
+                            <div style="top:103px; left:285px;">
+                              <span class="span1"> <span class="span2 transparent">&#160;&#160;</span> </span>
+                            </div>
+                            <div style="top:136px; left:119px;">
+                              <span class="span1"> <span class="span2 transparent">&#160;&#160;</span> </span>
+                            </div>
+                            <div style="top:136px; left:202px;">
+                              <span class="span1"> <span class="span2 transparent">&#160;&#160;</span> </span>
+                            </div>
+                            <div style="top:136px; left:285px;">
+                              <span class="span1"> <span class="span2 color">&#160;&#160;ɔ</span> </span>
+                            </div>
+                            <div style="top:167px; left:133px;">
+                              <span class="span1"> <span class="span2 color">æ&#160;&#160;</span> </span>
+                            </div>
+                            <div style="top:167px; left:212px;">
+                              <span class="span1"> <span class="span2 transparent">&#160;&#160;</span> </span>
+                            </div>
+                            <div style="top:199px; left:160px;">
+                              <span class="span1"> <span class="span2 transparent">&#160;&#160;</span> </span>
+                            </div>
+                            <div style="top:199px; left:223px;">
+                              <span class="span1"> <span class="span2 transparent">&#160;&#160;</span> </span>
+                            </div>
+                            <div style="top:199px; left:286px;">
+                              <span class="span1"> <span class="span2 transparent">&#160;&#160;</span> </span>
+                            </div>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align:right;">Near-&nbsp;high</td>
+              </tr>
+              <tr>
+                <td style="text-align:right;">High-&nbsp;mid</td>
+              </tr>
+              <tr>
+                <td style="text-align:right;"> <b>Mid</b> </td>
+              </tr>
+              <tr>
+                <td style="text-align:right;">Low-&nbsp;mid</td>
+              </tr>
+              <tr>
+                <td style="text-align:right;">Near-&nbsp;Low</td>
+              </tr>
+              <tr>
+                <td style="height:32px; text-align:right;"> <b>Low</b> </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="syll-struct">
+    <p> Syllable structure: (C)(C)V(C) </p>
+    <p> Stress pattern: advanced </p>
+    <p> Word initial consonants: </p>
+    /<span class="ipa">c, f, fl, j, l, m, n, s, sf, sl, sn, st, sŋ, t, x, ŋ, ɲ, ɾ, ʃ, ʒ, ʔ, ʤ, ʧ</span>/
+    <p> Mid-word consonants: </p>
+    /<span class="ipa">c, f, j, jɲ, jɾ, l, lʧ, m, n, ns, s, t, ts, x, ŋ, ɲ, ɾ, ɾs, ʃ, ʒ, ʔ, ʤ, ʧ</span>/
+    <p> Word final consonants: </p>
+    /<span class="ipa">c, l, m, n, s, ɲ, ɾ, ʃ, ʒ, ʤ</span>/
+    <div id="CFS" style="display: none;">
+      <p> Show frequency stats </p>
+      <p> Word initial: ɲ=22 ʃ=17 f=15 ŋ=13 ʔ=12 ʤ=11 c=11 l=10 m=10 n=9 x=9 ɾ=9 s=8 t=8 ʧ=8 j=8 ʒ=8 sf=22 fl=17
+        st=13 sŋ=11 sn=11 sl=10 </p>
+      <p> Mid-word: c=22 ʒ=17 x=15 ʤ=13 ɾ=12 ʃ=11 ʔ=11 ʧ=10 f=10 ɲ=9 ŋ=9 l=9 t=8 s=8 n=8 j=8 m=8 jɾ=22 ns=15
+        jɲ=12 ts=11 ɾs=9 lʧ=8Word final: c=22 ʒ=17 ʤ=13 ɾ=12 ʃ=11 ɲ=9 l=9 s=8 n=8 m=8 </p>
+    </div>
+  </div>
+  <div id="phon-rules">
+    <div id="phon-rules-info">
+      <div id="phonological_rules">
+        <p> Phonological rules (in order of application): </p>
+      </div>
+      <div id="phon-rules-data">
+        <li class="b ipa"> n → l / #_ </li>
+        <li class="b ipa"> s → h / V_V </li>
+        <li class="b ipa"> j → Ø / #_ </li>
+        <li class="b ipa"> i → e / _C </li>
+        <li class="b ipa"> N → w / S_S </li>
+        <li class="b ipa"> m → w / #_ </li>
+        <li class="b ipa"> ɲ → ŋ / _# </li>
+        <p> <a href="https://www.vulgarlang.com/phonological-rules" target="_blank">
+            How to read phonological rules
+          </a> </p>
+      </div>
+    </div>
+  </div>
 </div>

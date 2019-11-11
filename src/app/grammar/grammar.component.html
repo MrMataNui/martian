@@ -1,416 +1,394 @@
 <div id="lang-grammar">
-	<h2 class="head-grammar">Grammar</h2>
-	<div id="word-order" class="table-tab bg-block">
-		<p id="main-word-order">
-			<b>Main word order</b>: <br />
-			<span [innerHTML]="word().order"> Loading... </span>
-		</p>
-		<p id="word-order-example">
-			<span [innerHTML]="getWordOrder('English')"> Loading... </span>
-			<br />
-			<i> <u>turns into</u> </i>
-			<br />
-			<span [innerHTML]="getWordOrder('Martian')"> Loading... </span>
-		</p>
-		<p id="adjective-order">
-			<b>Adjective order</b>: <br />
-			<span [innerHTML]="word().adOrder"> Loading... </span>
-		</p>
-		<p id="adposition">
-			<b>Adposition</b>: <br />
-			<span [innerHTML]="word().adposition"> Loading... </span>
-		</p>
-	</div>
-	<br />
-	<div class="table-tab">
-		<h2>Noun</h2>
-		<p> Nouns form plural with separate plural word: </p>
-		<table>
-			<tr>
-				<td> <b>Plural</b> </td>
-				<td>
-					<span class="martian">YE</span>
-					<span class="ipa">/je/</span>
-					<br />
-					<i>plural particle</i>
-				</td>
-			</tr>
-		</table>
-		<p> Nouns have two cases: </p>
-		<p> <b>Nominative</b> is the doer of a verb: <b>dog</b> bites man </p>
-		<p> <b>Accusative</b> is the done-to of a verb: man bites <b>dog</b> </p>
-		<h3>Nominative</h3>
-		<table>
-			<tr>
-				<th></th>
-				<th>Animate</th>
-				<th>Inanimate</th>
-			</tr>
-			<tr>
-				<td> <b>Definite</b> </td>
-				<td>
-					<p>
-						Suffix <span class="ipa">/-æ/</span>
-					</p>
-					<span class="martian">ROSOQUA</span>
-					<span class="ipa">/ɾɔsɔxuˈæ/</span>
-				</td>
-				<td>
-					<p>
-						Suffix <span class="ipa">/-e/</span>
-					</p>
-					<span class="martian">ROSOQUE</span>
-					<span class="ipa">/ɾɔsɔxuˈe/</span>
-				</td>
-			</tr>
-			<tr>
-				<td> <b>Indefinite</b> </td>
-				<td>
-					<p>
-						Suffix <span class="ipa">/-(ə)l/</span>
-					</p>
-					<span class="martian">ROSOQUL</span>
-					<span class="ipa">/ɾɔsɔˈxul/</span>
-				</td>
-				<td>
-					<p>
-						Suffix <span class="ipa">/-u/</span>
-					</p>
-					<span class="martian">ROSOQUU</span>
-					<span class="ipa">/ɾɔsɔˈxuu/</span>
-				</td>
-			</tr>
-		</table>
-		<h3>Accusative</h3>
-		<table>
-			<tr>
-				<th></th>
-				<th>Animate</th>
-				<th>Inanimate</th>
-			</tr>
-			<tr>
-				<td> <b>Definite</b> </td>
-				<td>
-					<p>
-						Suffix <span class="ipa">/-(e)tsɔ/</span>
-					</p>
-					<span class="martian">ROSOQUTSO</span>
-					<span class="ipa">/ɾɔsɔxutˈsɔ/</span>
-				</td>
-				<td>
-					<p>
-						Suffix <span class="ipa">/-(u)c/</span>
-					</p>
-					<span class="martian">ROSOQUK</span>
-					<span class="ipa">/ɾɔsɔˈxuc/</span>
-				</td>
-			</tr>
-			<tr>
-				<td> <b>Indefinite</b> </td>
-				<td>
-					<p>
-						Suffix <span class="ipa">/-(i)xə/</span>
-					</p>
-					<span class="martian">ROSOQUQW</span>
-					<span class="ipa">/ɾɔsɔxuˈxə/</span>
-				</td>
-				<td>
-					<p> Suffix <span class="ipa">/-(æ)ɲ/</span> </p>
-					<span class="martian">ROSOQUC</span>
-					<span class="ipa">/ɾɔsɔxuˈɲ/</span>
-				</td>
-			</tr>
-		</table>
-	</div>
-	<div id="pers-pronouns" class="table-tab bg-block">
-		<h2>Pronouns</h2>
-		<table>
-			<tr>
-				<th></th>
-				<th>Nominative</th>
-				<th>Accusative</th>
-			</tr>
-			<tr>
-				<td> <b>1st singular</b> </td>
-				<td>
-					<span class="martian">LW</span>
-					<span class="ipa">/lə/</span>
-					<br />
-					<i>I</i>
-				</td>
-				<td>
-					<span class="martian">HE</span>
-					<span class="ipa">/ʔe/</span>
-					<br />
-					<i>me</i>
-				</td>
-			</tr>
-			<tr>
-				<td> <b>2nd singular</b> </td>
-				<td>
-					<span class="martian">FWZ</span>
-					<span class="ipa">/fəʒ/</span>
-					<br />
-					<i>you</i>
-				</td>
-				<td>
-					<span class="martian">RO</span>
-					<span class="ipa">/ɾɔ/</span>
-					<br />
-					<i>you</i>
-				</td>
-			</tr>
-			<tr>
-				<td> <b>3rd singular Animate</b> </td>
-				<td>
-					<span class="martian">AZ</span>
-					<span class="ipa">/æʒ/</span>
-					<br />
-					<i>he/she</i>
-				</td>
-				<td>
-					<span class="martian">JI</span>
-					<span class="ipa">/ʤi/</span>
-					<br />
-					<i>he/she</i>
-				</td>
-			</tr>
-			<tr>
-				<td> <b>3rd singular Inanimate</b> </td>
-				<td>
-					<span class="martian">FLWS</span>
-					<span class="ipa">/fləs/</span>
-					<br />
-					<i>it</i>
-				</td>
-				<td>
-					<span class="martian">A</span>
-					<span class="ipa">/æ/</span>
-					<br />
-					<i>it</i>
-				</td>
-			</tr>
-			<tr>
-				<td> <b>1st plural inclusive</b> </td>
-				<td>
-					<span class="martian">FLWD</span>
-					<span class="ipa">/fləʃ/</span>
-					<br />
-					<i>we (including you)</i>
-				</td>
-				<td>
-					<span class="martian">SUZ</span>
-					<span class="ipa">/suʒ/</span>
-					<br />
-					<i>us (including you)</i>
-				</td>
-			</tr>
-			<tr>
-				<td> <b>1st plural exclusive</b> </td>
-				<td>
-					<span class="martian">NE</span>
-					<span class="ipa">/ne/</span>
-					<br />
-					<i>we (excluding you)</i>
-				</td>
-				<td>
-					<span class="martian">E</span>
-					<span class="ipa">/e/</span>
-					<br />
-					<i>us (excluding you)</i>
-				</td>
-			</tr>
-			<tr>
-				<td> <b>2nd plural</b> </td>
-				<td>
-					<span class="martian">DIZ</span>
-					<span class="ipa">/ʃiʒ/</span>
-					<br />
-					<i>you (all)</i>
-				</td>
-				<td>
-					<span class="martian">STEN</span>
-					<span class="ipa">/sten/</span>
-					<br />
-					<i>you (all)</i>
-				</td>
-			</tr>
-			<tr>
-				<td> <b>3rd plural</b> </td>
-				<td>
-					<span class="martian">STE</span>
-					<span class="ipa">/ste/</span>
-					<br />
-					<i>they</i>
-				</td>
-				<td>
-					<span class="martian">FWN</span>
-					<span class="ipa">/fən/</span>
-					<br />
-					<i>them</i>
-				</td>
-			</tr>
-		</table>
-	</div>
-	<div id="lang-verbs" class="table-tab bg-block">
-		<h2>Verbs</h2>
-		<p> Future tense is indicated with the word: </p>
-		<table>
-			<tr>
-				<td> <b>Future particle</b> </td>
-				<td>
-					<span class="martian">ZE</span>
-					<span class="ipa">/ʒe/</span>
-					<br />
-					<i>future tense particle</i>
-				</td>
-			</tr>
-		</table>
-		<p> Verbs are conjugated depending on the gender of the doer of the verb. </p>
-		<h3></h3>
-		<table>
-			<tr>
-				<th></th>
-				<th>Present</th>
-				<th>Past</th>
-			</tr>
-			<tr>
-				<td> <b>Animate</b> </td>
-				<td>
-					<p> Suffix <span class="ipa">/-un/</span> </p>
-					<span class="martian">SFUJOHOKUN</span>
-					<span class="ipa">/sfuʤɔʔɔˈcun/</span>
-				</td>
-				<td>
-					<p> Suffix <span class="ipa">/-iʒ/</span> </p>
-					<span class="martian">SFUJOHOKIZ</span>
-					<span class="ipa">/sfuʤɔʔɔˈciʒ/</span>
-				</td>
-			</tr>
-			<tr>
-				<td> <b>Inanimate</b> </td>
-				<td>
-					<p> Suffix <span class="ipa">/-(ə)xə/</span> </p>
-					<span class="martian">SFUJOHOKWQW</span>
-					<span class="ipa">/sfuʤɔʔɔcəˈxə/</span>
-				</td>
-				<td>
-					<p> Suffix <span class="ipa">/-(æ)s/</span> </p>
-					<span class="martian">SFUJOHOKAS</span>
-					<span class="ipa">/sfuʤɔʔɔˈcæs/</span>
-				</td>
-			</tr>
-		</table>
-		<br />
-	</div>
-	<div class="table-tab">
-		<h3>Perfect aspect</h3>
-		<p> Perfect aspect in English is exemplified in ‘I have read this book’, </p>
-		<p> which expresses an event that took place before the time spoken </p>
-		<p> but which has an effect on or is in some way still relevant to the present. </p>
-		<p> In Martian, the perfect is constructed with an affix </p>
-		<table>
-			<tr>
-				<td> <b>Perfect</b> </td>
-				<td>
-					<p> Suffix <span class="ipa">/-(æ)jɾu/</span> </p>
-					<span class="martian">SFUJOHOKAYRU</span>
-					<span class="ipa">/sfuʤɔʔɔcæˈjɾu/</span>
-				</td>
-			</tr>
-		</table>
-	</div>
-	<div id="lang-der-morph">
-		<h3 class="head-der-morph">Derivational morphology</h3>
-		<ul>
-			<li>
-				<b>
-					<span class="not">Adjective → noun </span>
-				</b>
-				<ul>
-					<li> Suffix <span class="ipa">/-eɲ/</span> </li>
-				</ul>
-			</li>
-			<li>
-				<b>
-					<span class="not">Noun → adjective </span>
-				</b>
-				<ul>
-					<li> Suffix <span class="ipa">/-(æ)ʃ/</span> </li>
-				</ul>
-			</li>
-			<li>
-				<b>
-					<span class="not">Noun → verb </span>
-				</b>
-				<ul>
-					<li> Suffix <span class="ipa">/-(ɔ)xə/</span> </li>
-				</ul>
-			</li>
-			<li>
-				<b>
-					<span class="not">Verb → noun </span>
-				</b>
-				<ul>
-					<li> Suffix <span class="ipa">/-(i)ɲ/</span> </li>
-				</ul>
-			</li>
-			<li>
-				<b>
-					<span class="not">Verb → adjective </span>
-				</b>
-				<ul>
-					<li> Suffix <span class="ipa">/-(u)ʃ/</span> </li>
-				</ul>
-			</li>
-			<li>
-				<b>
-					<span class="not">Adjective → verb </span>
-				</b>
-				<ul>
-					<li> Suffix <span class="ipa">/-i/</span> </li>
-				</ul>
-			</li>
-			<li>
-				<b>
-					<span class="not">Adjective → adverb </span>
-				</b>
-				<ul>
-					<li> Suffix <span class="ipa">/-æ/</span> </li>
-				</ul>
-			</li>
-			<li>
-				<b>
-					<span class="not">One who Xs (e.g. paint → painter) </span>
-				</b>
-				<ul>
-					<li> Suffix <span class="ipa">/-(ɔ)xə/</span> </li>
-				</ul>
-			</li>
-			<li>
-				<b>
-					<span class="not">Place of (e.g. wine → winery) </span>
-				</b>
-				<ul>
-					<li> Suffix <span class="ipa">/-(æ)ʤ/</span> </li>
-				</ul>
-			</li>
-			<li>
-				<b>
-					<span class="not">Diminutive </span>
-				</b>
-				<ul>
-					<li> Suffix <span class="ipa">/-(æ)ʤ/</span> </li>
-				</ul>
-			</li>
-			<li>
-				<b>
-					<span class="not">Augmentative </span>
-				</b>
-				<ul>
-					<li> Suffix <span class="ipa">/-(u)ʤæ/</span> </li>
-				</ul>
-			</li>
-		</ul>
-	</div>
+  <h2 class="head-grammar">Grammar</h2>
+  <div id="word-order" class="table-tab bg-block">
+    <p id="main-word-order">
+      <b>Main word order</b>: <br />
+      <span [innerHTML]="word().order"> Loading... </span>
+    </p>
+    <p id="word-order-example">
+      <span [innerHTML]="getWordOrder('English')"> Loading... </span>
+      <br />
+      <i> <u>turns into</u> </i>
+      <br />
+      <span [innerHTML]="getWordOrder('Martian')"> Loading... </span>
+    </p>
+    <p id="adjective-order">
+      <b>Adjective order</b>: <br />
+      <span [innerHTML]="word().adOrder"> Loading... </span>
+    </p>
+    <p id="adposition">
+      <b>Adposition</b>: <br />
+      <span [innerHTML]="word().adposition"> Loading... </span>
+    </p>
+  </div>
+  <br />
+  <div class="table-tab">
+    <h2>Noun</h2>
+    <p> Nouns form plural with separate plural word: </p>
+    <table>
+      <tr>
+        <td> <b>Plural</b> </td>
+        <td>
+          <span class="martian">YE</span>
+          <span class="ipa">/je/</span>
+          <br />
+          <i>plural particle</i>
+        </td>
+      </tr>
+    </table>
+    <p> Nouns have two cases: </p>
+    <p> <b>Nominative</b> is the doer of a verb: <b>dog</b> bites man </p>
+    <p> <b>Accusative</b> is the done-to of a verb: man bites <b>dog</b> </p>
+    <h3>Nominative</h3>
+    <table>
+      <tr>
+        <th></th>
+        <th>Animate</th>
+        <th>Inanimate</th>
+      </tr>
+      <tr>
+        <td> <b>Definite</b> </td>
+        <td>
+          <p>
+            Suffix <span class="ipa">/-æ/</span>
+          </p>
+          <span class="martian">ROSOQUA</span>
+          <span class="ipa">/ɾɔsɔxuˈæ/</span>
+        </td>
+        <td>
+          <p>
+            Suffix <span class="ipa">/-e/</span>
+          </p>
+          <span class="martian">ROSOQUE</span>
+          <span class="ipa">/ɾɔsɔxuˈe/</span>
+        </td>
+      </tr>
+      <tr>
+        <td> <b>Indefinite</b> </td>
+        <td>
+          <p>
+            Suffix <span class="ipa">/-(ə)l/</span>
+          </p>
+          <span class="martian">ROSOQUL</span>
+          <span class="ipa">/ɾɔsɔˈxul/</span>
+        </td>
+        <td>
+          <p>
+            Suffix <span class="ipa">/-u/</span>
+          </p>
+          <span class="martian">ROSOQUU</span>
+          <span class="ipa">/ɾɔsɔˈxuu/</span>
+        </td>
+      </tr>
+    </table>
+    <h3>Accusative</h3>
+    <table>
+      <tr>
+        <th></th>
+        <th>Animate</th>
+        <th>Inanimate</th>
+      </tr>
+      <tr>
+        <td> <b>Definite</b> </td>
+        <td>
+          <p>
+            Suffix <span class="ipa">/-(e)tsɔ/</span>
+          </p>
+          <span class="martian">ROSOQUTSO</span>
+          <span class="ipa">/ɾɔsɔxutˈsɔ/</span>
+        </td>
+        <td>
+          <p>
+            Suffix <span class="ipa">/-(u)c/</span>
+          </p>
+          <span class="martian">ROSOQUK</span>
+          <span class="ipa">/ɾɔsɔˈxuc/</span>
+        </td>
+      </tr>
+      <tr>
+        <td> <b>Indefinite</b> </td>
+        <td>
+          <p>
+            Suffix <span class="ipa">/-(i)xə/</span>
+          </p>
+          <span class="martian">ROSOQUQW</span>
+          <span class="ipa">/ɾɔsɔxuˈxə/</span>
+        </td>
+        <td>
+          <p> Suffix <span class="ipa">/-(æ)ɲ/</span> </p>
+          <span class="martian">ROSOQUC</span>
+          <span class="ipa">/ɾɔsɔxuˈɲ/</span>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div id="pers-pronouns" class="table-tab bg-block">
+    <h2>Pronouns</h2>
+    <table>
+      <tr>
+        <th></th>
+        <th>Nominative</th>
+        <th>Accusative</th>
+      </tr>
+      <tr>
+        <td> <b>1st singular</b> </td>
+        <td>
+          <span class="martian">LW</span>
+          <span class="ipa">/lə/</span>
+          <br />
+          <i>I</i>
+        </td>
+        <td>
+          <span class="martian">HE</span>
+          <span class="ipa">/ʔe/</span>
+          <br />
+          <i>me</i>
+        </td>
+      </tr>
+      <tr>
+        <td> <b>2nd singular</b> </td>
+        <td>
+          <span class="martian">FWZ</span>
+          <span class="ipa">/fəʒ/</span>
+          <br />
+          <i>you</i>
+        </td>
+        <td>
+          <span class="martian">RO</span>
+          <span class="ipa">/ɾɔ/</span>
+          <br />
+          <i>you</i>
+        </td>
+      </tr>
+      <tr>
+        <td> <b>3rd singular Animate</b> </td>
+        <td>
+          <span class="martian">AZ</span>
+          <span class="ipa">/æʒ/</span>
+          <br />
+          <i>he/she</i>
+        </td>
+        <td>
+          <span class="martian">JI</span>
+          <span class="ipa">/ʤi/</span>
+          <br />
+          <i>he/she</i>
+        </td>
+      </tr>
+      <tr>
+        <td> <b>3rd singular Inanimate</b> </td>
+        <td>
+          <span class="martian">FLWS</span>
+          <span class="ipa">/fləs/</span>
+          <br />
+          <i>it</i>
+        </td>
+        <td>
+          <span class="martian">A</span>
+          <span class="ipa">/æ/</span>
+          <br />
+          <i>it</i>
+        </td>
+      </tr>
+      <tr>
+        <td> <b>1st plural inclusive</b> </td>
+        <td>
+          <span class="martian">FLWD</span>
+          <span class="ipa">/fləʃ/</span>
+          <br />
+          <i>we (including you)</i>
+        </td>
+        <td>
+          <span class="martian">SUZ</span>
+          <span class="ipa">/suʒ/</span>
+          <br />
+          <i>us (including you)</i>
+        </td>
+      </tr>
+      <tr>
+        <td> <b>1st plural exclusive</b> </td>
+        <td>
+          <span class="martian">NE</span>
+          <span class="ipa">/ne/</span>
+          <br />
+          <i>we (excluding you)</i>
+        </td>
+        <td>
+          <span class="martian">E</span>
+          <span class="ipa">/e/</span>
+          <br />
+          <i>us (excluding you)</i>
+        </td>
+      </tr>
+      <tr>
+        <td> <b>2nd plural</b> </td>
+        <td>
+          <span class="martian">DIZ</span>
+          <span class="ipa">/ʃiʒ/</span>
+          <br />
+          <i>you (all)</i>
+        </td>
+        <td>
+          <span class="martian">STEN</span>
+          <span class="ipa">/sten/</span>
+          <br />
+          <i>you (all)</i>
+        </td>
+      </tr>
+      <tr>
+        <td> <b>3rd plural</b> </td>
+        <td>
+          <span class="martian">STE</span>
+          <span class="ipa">/ste/</span>
+          <br />
+          <i>they</i>
+        </td>
+        <td>
+          <span class="martian">FWN</span>
+          <span class="ipa">/fən/</span>
+          <br />
+          <i>them</i>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div id="lang-verbs" class="table-tab bg-block">
+    <h2>Verbs</h2>
+    <p> Future tense is indicated with the word: </p>
+    <table>
+      <tr>
+        <td> <b>Future particle</b> </td>
+        <td>
+          <span class="martian">ZE</span>
+          <span class="ipa">/ʒe/</span>
+          <br />
+          <i>future tense particle</i>
+        </td>
+      </tr>
+    </table>
+    <p> Verbs are conjugated depending on the gender of the doer of the verb. </p>
+    <h3></h3>
+    <table>
+      <tr>
+        <th></th>
+        <th>Present</th>
+        <th>Past</th>
+      </tr>
+      <tr>
+        <td> <b>Animate</b> </td>
+        <td>
+          <p> Suffix <span class="ipa">/-un/</span> </p>
+          <span class="martian">SFUJOHOKUN</span>
+          <span class="ipa">/sfuʤɔʔɔˈcun/</span>
+        </td>
+        <td>
+          <p> Suffix <span class="ipa">/-iʒ/</span> </p>
+          <span class="martian">SFUJOHOKIZ</span>
+          <span class="ipa">/sfuʤɔʔɔˈciʒ/</span>
+        </td>
+      </tr>
+      <tr>
+        <td> <b>Inanimate</b> </td>
+        <td>
+          <p> Suffix <span class="ipa">/-(ə)xə/</span> </p>
+          <span class="martian">SFUJOHOKWQW</span>
+          <span class="ipa">/sfuʤɔʔɔcəˈxə/</span>
+        </td>
+        <td>
+          <p> Suffix <span class="ipa">/-(æ)s/</span> </p>
+          <span class="martian">SFUJOHOKAS</span>
+          <span class="ipa">/sfuʤɔʔɔˈcæs/</span>
+        </td>
+      </tr>
+    </table>
+    <br />
+  </div>
+  <div class="table-tab">
+    <h3>Perfect aspect</h3>
+    <p> Perfect aspect in English is exemplified in ‘I have read this book’, </p>
+    <p> which expresses an event that took place before the time spoken </p>
+    <p> but which has an effect on or is in some way still relevant to the present. </p>
+    <p> In Martian, the perfect is constructed with an affix </p>
+    <table>
+      <tr>
+        <td> <b>Perfect</b> </td>
+        <td>
+          <p> Suffix <span class="ipa">/-(æ)jɾu/</span> </p>
+          <span class="martian">SFUJOHOKAYRU</span>
+          <span class="ipa">/sfuʤɔʔɔcæˈjɾu/</span>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div id="lang-der-morph">
+    <h3 class="head-der-morph">Derivational morphology</h3>
+    <ul>
+      <li>
+        <b> <span class="not">Adjective → noun </span> </b>
+        <ul>
+          <li> Suffix <span class="ipa">/-eɲ/</span> </li>
+        </ul>
+      </li>
+      <li>
+        <b> <span class="not">Noun → adjective </span> </b>
+        <ul>
+          <li> Suffix <span class="ipa">/-(æ)ʃ/</span> </li>
+        </ul>
+      </li>
+      <li>
+        <b> <span class="not">Noun → verb </span> </b>
+        <ul>
+          <li> Suffix <span class="ipa">/-(ɔ)xə/</span> </li>
+        </ul>
+      </li>
+      <li>
+        <b> <span class="not">Verb → noun </span> </b>
+        <ul>
+          <li> Suffix <span class="ipa">/-(i)ɲ/</span> </li>
+        </ul>
+      </li>
+      <li>
+        <b> <span class="not">Verb → adjective </span> </b>
+        <ul>
+          <li> Suffix <span class="ipa">/-(u)ʃ/</span> </li>
+        </ul>
+      </li>
+      <li>
+        <b> <span class="not">Adjective → verb </span> </b>
+        <ul>
+          <li> Suffix <span class="ipa">/-i/</span> </li>
+        </ul>
+      </li>
+      <li>
+        <b> <span class="not">Adjective → adverb </span> </b>
+        <ul>
+          <li> Suffix <span class="ipa">/-æ/</span> </li>
+        </ul>
+      </li>
+      <li>
+        <b> <span class="not">One who Xs (e.g. paint → painter) </span> </b>
+        <ul>
+          <li> Suffix <span class="ipa">/-(ɔ)xə/</span> </li>
+        </ul>
+      </li>
+      <li>
+        <b> <span class="not">Place of (e.g. wine → winery) </span> </b>
+        <ul>
+          <li> Suffix <span class="ipa">/-(æ)ʤ/</span> </li>
+        </ul>
+      </li>
+      <li>
+        <b> <span class="not">Diminutive </span> </b>
+        <ul>
+          <li> Suffix <span class="ipa">/-(æ)ʤ/</span> </li>
+        </ul>
+      </li>
+      <li>
+        <b> <span class="not">Augmentative </span> </b>
+        <ul>
+          <li> Suffix <span class="ipa">/-(u)ʤæ/</span> </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
 </div>

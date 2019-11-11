@@ -144,3 +144,59 @@ canvas.background {
 	width: 100%;
 	height: 100%;
 }
+
+/* #### Mobile Phones Portrait #### */
+#mobile-nav {
+  overflow: hidden;
+  background-color: #333;
+  position: relative;
+}
+
+#myLinks { display: none; }
+#mobile-nav { display: none; }
+#head-nav { display: block; }
+
+#mobile-nav a {
+    color: white;
+    padding: 0.5em 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+}
+
+#mobile-nav a.icon {
+    background: black;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 0 16px;
+    line-height: 2.5em;
+}
+
+.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+@media screen
+and (max-device-width: 480px)
+and (orientation: portrait) {
+	body { width: 90%; }
+	app-root body { width: 100%; }
+
+	#link-loc {
+		line-height: 2.5em;
+		color: #FFF;
+	}
+
+	#mobile-nav {
+		display: block;
+		font-size: 2em;
+	}
+
+	#head-nav { display: none; }
+	#timeline { flex-direction: column; }
+	#vowels, #consonants, #syll-struct, #phon-rules { margin: 20px auto; }
+}
+

@@ -13,19 +13,33 @@ export class AppComponent implements OnInit {
 		grammar: 'nav-grammar',
 		dictionary: 'nav-lexi'
 	};
+	getID = (item: string) => document.getElementById(item);
 	low = (item: string) => item.toLowerCase();
 
 	myFunction(navbar: HTMLElement, sticky: number) {
-			if (window.pageYOffset >= sticky) {
-				navbar.classList.add('sticky');
-			} else {
-				navbar.classList.remove('sticky');
-			}
+		if (window.pageYOffset >= sticky) {
+			navbar.classList.add('sticky');
+		} else {
+			navbar.classList.remove('sticky');
 		}
+	}
+
+	mobileLinks() {
+		const myLinks = this.getID('myLinks');
+		if (myLinks.style.display === 'block') {
+			myLinks.style.display = 'none';
+		} else {
+			myLinks.style.display = 'block';
+		}
+	}
+
+	mobileLinkClick() {
+		this.getID('myLinks').style.display = 'none';
+	}
 
 	ngOnInit() {
 		const navbar = document.getElementById('head-nav');
 		const sticky = navbar.offsetTop;
-		window.onscroll = () =>  this.myFunction(navbar, sticky);
+		window.onscroll = () => this.myFunction(navbar, sticky);
 	}
 }
