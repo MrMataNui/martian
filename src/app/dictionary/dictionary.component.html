@@ -1,30 +1,85 @@
 <div id="lang-lexi">
-	<div class="lexi-flex">
-		<button id="show-martian" (click)="dicionaryClick($event)"> Martian &rArr; English </button>
-		<button id="show-english" (click)="dicionaryClick($event)"> English &rArr; Martian </button>
-	</div>
-	<br />
-	<div id="martian-dicionary" *ngIf="martianShow">
-		<div class="center">
-			Key: Martian word
-			<b>|</b> <span class="rom"> (romanization) </span>
-			<b>|</b> <span class="ipa"> /pronunciation/ </span>
-			<b>|</b> <span class="pos"> part of speech. </span>
-			<b>|</b> <b> English word(s) </b>
-		</div>
-		<br />
-		<h2 class="head-lexi">Martian &rArr; English Dictionary</h2>
-		<ul class="lexilist" [innerHTML]="getMartianDictionary(martianRom)"></ul>
-	</div>
-	<div id="english-dicionary" *ngIf="englishShow">
-		<div class="center">
-			Key: <b> English word </b>
-			<b>|</b> <span class="pos"> part of speech. </span>
-			<b>|</b> Martian word(s)
-			<b>|</b> <span class="rom"> (romanization) </span>
-		</div>
-		<br />
-		<h2 class="head-lexi">English &rArr; Martian Dictionary</h2>
-		<ul class="lexilist" [innerHTML]="getEnglishDictionary(englishRom)"></ul>
-	</div>
+  <p id="table-sort">
+    <button id="MartianSort" class="button0 button10" (click)="changeLang('Lang')"> Sort by Martian word </button>
+    <button id="EnglishSort" class="button0 button10" (click)="changeLang('English')"> Sort by English word </button>
+  </p>
+  <br />
+  <table id="martian-letter">
+    <tr>
+      <th colspan="16" class="letterCheck" (click)="newTable = allTable"> All Letters </th>
+    </tr>
+    <tr>
+      <td *ngFor="let symbol of symbols1">
+        <ng-container *ngFor="let find of getAllWords">
+          <ng-container *ngIf="symbol.letter == find.letter">
+            <ng-template [ngIf]="find.words.length !== 0" [ngIfElse]="letterCheck">
+              <div class="letterCheck" (click)="newTable = find.words">
+                <span class="martian">{{ symbol.letter }}</span>
+                <span>({{ symbol.romanization }})</span>
+              </div>
+            </ng-template>
+            <ng-template #letterCheck>
+              <div>
+                <span class="martian">{{ symbol.letter }}</span>
+                <span>({{ symbol.romanization }})</span>
+              </div>
+            </ng-template>
+          </ng-container>
+        </ng-container>
+      </td>
+    </tr>
+    <tr>
+      <td *ngFor="let symbol of symbols2">
+        <ng-container *ngFor="let find of getAllWords">
+          <ng-container *ngIf="symbol.letter == find.letter">
+            <ng-template [ngIf]="find.words.length !== 0" [ngIfElse]="letterCheck">
+              <div class="letterCheck" (click)="newTable = find.words">
+                <span class="martian">{{ symbol.letter }}</span>
+                <span>({{ symbol.romanization }})</span>
+              </div>
+            </ng-template>
+            <ng-template #letterCheck>
+              <div>
+                <span class="martian">{{ symbol.letter }}</span>
+                <span>({{ symbol.romanization }})</span>
+              </div>
+            </ng-template>
+          </ng-container>
+        </ng-container>
+      </td>
+    </tr>
+  </table>
+  <br />
+  <!-- <div class="center"> (POS = Part Of Speech) </div> <br /> -->
+  <table id="lexicon-table">
+    <tr>
+      <th> Martian Word </th>
+      <th> /Pronunciation/ </th>
+      <th> Romanization </th>
+      <th> English Word </th>
+      <th> Part Of Speech </th>
+    </tr>
+    <tr *ngFor="let newWord of newTable">
+      <td>
+        <ng-container *ngFor="let find of firstWord">
+          <ng-container *ngIf="newWord.Martian == find.word">
+            <span id="{{ find.letter }}"></span>
+          </ng-container>
+        </ng-container>
+        <span class="martian"> {{ newWord.Martian }} </span>
+      </td>
+      <td>
+        /<span class="ipa">{{ newWord.IPA }}</span>/
+      </td>
+      <td> {{ newWord.Romanization }} </td>
+      <td> {{ newWord.English }} </td>
+      <td> {{ newWord.POS }} </td>
+      <!--
+				<td class="martian"> {{ newWord.Martian3 }} </td>
+				<td> {{ newWord.POS3 }} </td>
+				<td class="martian"> {{ newWord.Martian4 }} </td>
+				<td> {{ newWord.POS4 }} </td>
+			-->
+    </tr>
+  </table>
 </div>

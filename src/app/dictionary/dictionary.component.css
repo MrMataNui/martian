@@ -12,3 +12,21 @@
 	cursor: pointer;
 	height: 2em;
 }
+
+[id$='Sort'] {
+	font-family: 'Megrim', cursive;
+	font-weight: bold;
+}
+
+.letterCheck {
+	color: blue;
+	cursor: pointer;
+}
+
+.letterCheck:hover {
+	color: #800;
+	text-decoration: underline;
+}
+
+th.letterCheck { color: #AAA; }
+th.letterCheck:hover { color: #F00; }

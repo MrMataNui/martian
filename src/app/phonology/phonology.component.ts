@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { soundSymbol } from '../dictionary.min';
+import { soundSymbol } from '../dictionary';
 @Component({
 	selector: 'app-phonology',
 	templateUrl: './phonology.component.html',
@@ -14,7 +14,7 @@ export class PhonologyComponent implements OnInit {
 		let letters = '<th> Letter </th>';
 		soundSymbol.forEach(word => {
 			sounds += `<td> /<span class="ipa">${word.sound}</span>/ </td>`;
-			romanization += `<td> ${word.romanization} </td>`;
+			romanization += `<td> ${word.Romanization} </td>`;
 			letters += `<td> <span class="martian">${word.letter}</span> </td>`;
 		});
 		return `<tr>${letters}</tr> <tr>${romanization}</tr> <tr>${sounds}</tr>`;

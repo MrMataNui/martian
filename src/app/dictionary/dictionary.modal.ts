@@ -1,33 +1,15 @@
-import { marsDitionary } from '../dictionary.min';
-
-export interface English {
-	English: string;
-	POS: string;
-	Martian: string;
-	POS2?: string;
-	Martian2?: string;
-	POS3?: string;
-	Martian3?: string;
-	POS4?: string;
-	Martian4?: string;
-}
-
-export interface Martian {
-	Martian: string;
-	IPA: string;
-	POS: string;
-	English: string;
-}
+import { marsDitionary, soundSymbol } from '../dictionary';
 
 export interface Dictionary {
-	english: English[];
-	martian: Martian[];
+	English: string;
+	POS: string;
+	Martian: string;
 }
 
-export const dictionary: Dictionary = marsDitionary;
+export const dictionary: Dictionary[] = marsDitionary;
 
 export interface Romanization {
-	romanization: string;
+	Romanization: string;
 	IPA: string;
 	English: string;
 	POS: string;
@@ -39,3 +21,31 @@ export interface Romanization {
 	POS4?: string;
 	Martian4?: string;
 }
+
+export interface SoundSymbols {
+	sound: string;
+	letter: string;
+	Romanization: string;
+}
+
+export interface Lexicon {
+	spelling: string;
+	IPA: string;
+	POS: string;
+	English: string;
+	POS2: string;
+	English2: string;
+	POS3: string;
+	English3: string;
+	POS4: string;
+	English4: string;
+}
+
+export interface FirstWord {
+	letter: string;
+	word: string;
+}
+
+export const removeDups = (names: string[]): string[] => names.filter((v, i) => names.indexOf(v) === i);
+
+export const soundSymbols: SoundSymbols[] = soundSymbol;
