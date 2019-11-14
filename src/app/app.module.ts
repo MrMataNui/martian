@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { DictionaryComponent } from './dictionary/dictionary.component';
 import { GrammarComponent } from './grammar/grammar.component';
 import { PhonologyComponent } from './phonology/phonology.component';
+import { DataComponent } from './data/data.component';
 import { Routes, RouterModule } from '@angular/router';
 
 const appRoutes: Routes = [
 	{ path: 'phonology', component: PhonologyComponent },
 	{ path: 'grammar', component: GrammarComponent },
 	{ path: 'dictionary', component: DictionaryComponent },
+	{ path: 'data', component: DataComponent },
 	{ path: '', redirectTo: '/phonology', pathMatch: 'full' },
 	{ path: '**', redirectTo: '/phonology', pathMatch: 'full' }
 ];
@@ -22,7 +24,8 @@ const appRoutes: Routes = [
 		AppComponent,
 		DictionaryComponent,
 		GrammarComponent,
-		PhonologyComponent
+		PhonologyComponent,
+		DataComponent
 	],
 	providers: [],
 	bootstrap: [AppComponent]

@@ -72,14 +72,8 @@
         /<span class="ipa">{{ newWord.IPA }}</span>/
       </td>
       <td> {{ newWord.Romanization }} </td>
-      <td> {{ newWord.English }} </td>
+      <td> {{ capitalize(newWord.English) }} </td>
       <td> {{ newWord.POS }} </td>
-      <!--
-				<td class="martian"> {{ newWord.Martian3 }} </td>
-				<td> {{ newWord.POS3 }} </td>
-				<td class="martian"> {{ newWord.Martian4 }} </td>
-				<td> {{ newWord.POS4 }} </td>
-			-->
     </tr>
   </table>
 </div>

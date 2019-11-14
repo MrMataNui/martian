@@ -1,6 +1,6 @@
 // tslint:disable:forin
 import { Component, OnInit } from '@angular/core';
-import { dictionary, Romanization, soundSymbols, removeDups, SoundSymbols, Dictionary } from './dictionary.modal';
+import { dictionary, Romanization, soundSymbols, SoundSymbols, Dictionary } from './dictionary.modal';
 
 @Component({
 	selector: 'app-dictionary',
@@ -8,21 +8,15 @@ import { dictionary, Romanization, soundSymbols, removeDups, SoundSymbols, Dicti
 	styleUrls: ['./dictionary.component.css']
 })
 export class DictionaryComponent implements OnInit {
-	constructor() {
-		this.englishRomanization = this.englishRomanization.bind(this);
-	}
-	martianRom: Romanization[];
-	englishRom: Romanization[];
-	martianShow = !0;
-	englishShow = !1;
+	constructor() { this.romanize = this.romanize.bind(this); }
+
+	englishRomanization: Romanization[];
+	martianShow: boolean;
+	englishShow: boolean;
 	newTable: Romanization[];
 	allTable: Romanization[];
-	symbols: string[] = removeDups([
-		...soundSymbols.map(letter => letter.letter)
-	]);
-	romanization: string[] = removeDups([
-		...soundSymbols.map(letter => letter.Romanization)
-	]);
+	symbols: string[] = [ ...soundSymbols.map(letter => letter.letter) ];
+	romanization: string[] = [ ...soundSymbols.map(letter => letter.Romanization) ];
 	symbols1: { letter: string, romanization: string }[] = [];
 	symbols2: { letter: string, romanization: string }[] = [];
 	soundSymbols: SoundSymbols[] = soundSymbols;
@@ -31,67 +25,25 @@ export class DictionaryComponent implements OnInit {
 	firstWord: { letter: string, word: Romanization }[] = [];
 	getAllWords: { letter: string, words: Romanization[] }[] = [];
 
+	getMartian: boolean[] = [true, false];
+	getEnglish: boolean[] = [false, true];
+
+	capitalize = (name: string): string => name.charAt(0).toUpperCase() + name.slice(1);
+	sorter = (a: string, b: string): number => (a < b) ? -1 : (a > b) ? 1 : 0;
+
 	dicionaryClick(event: any) {
 		switch (event.target.id) {
-			case 'show-martian':
-				this.martianShow = !0;
-				this.englishShow = !1;
-				break;
-			case 'show-english':
-				this.martianShow = !1;
-				this.englishShow = !0;
-				break;
+			case 'show-martian': [this.martianShow, this.englishShow] = this.getMartian; break;
+			case 'show-english': [this.martianShow, this.englishShow] = this.getEnglish; break;
 		}
 	}
-	langCapitalize = (letter: string): string => (letter === 'ʯ') ? letter : `${letter} ${letter}`;
-	sorter = (a: string, b: string): number => (a < b) ? -1 : (a > b) ? 1 : 0;
 
 	langSorter(a: Romanization, b: Romanization): number {
 		const [c, d] = (a.IPA) ? [a.Martian, b.Martian] : [a.English, b.English];
 		return c < d ? -1 : 1;
 	}
 
-	getMartianDictionary(martian: Romanization[]): string {
-		let martianDicionary = '';
-		for (const word in martian) {
-			martianDicionary += `<li>
-				<span class="martian">${martian[word].Martian}</span> <b>|</b>
-				<span class="rom">(${martian[word].Romanization})</span> <b>|</b>
-				/<span class="ipa">${martian[word].IPA}</span>/ <b>|</b>
-				<span class="pos">${martian[word].POS}</span> <b>|</b>
-				<b>${martian[word].English}</b>
-			</li>`;
-		}
-		return martianDicionary;
-	}
-
-	getEnglishDictionary(english: Romanization[]): string {
-		let englishDicionary = '';
-		for (const word in english) {
-			if (english[word].English === 'i') { english[word].English = 'I'; }
-			let wordGet = `<b>${english[word].English}</b>
-				<b>|</b> <span class="pos">${english[word].POS}</span>
-				<b>|</b> <span class="martian">${english[word].Martian}</span>
-				<b>|</b> <span class="rom">(${english[word].Romanization})</span>`;
-
-			const template = (POS: string, martianWord: string) => `
-				<b>|</b> <span class="pos">${POS}</span>
-				<b>|</b> <span class="martian">${martianWord}</span>`;
-			if (english[word].POS2) {
-				wordGet += template(english[word].POS2, english[word].Martian2);
-				if (english[word].POS3) {
-					wordGet += template(english[word].POS3, english[word].Martian3);
-					if (english[word].POS4) {
-						wordGet += template(english[word].POS4, english[word].Martian4);
-					}
-				}
-			}
-			englishDicionary += `<li> ${wordGet} </li>`;
-		}
-		return englishDicionary;
-	}
-
-	englishRomanization(getWord: Dictionary): Romanization {
+	romanize(getWord: Dictionary): Romanization {
 		const getMartian: string[] = getWord.Martian.split('');
 		let getRom = '';
 		let getIPA = '';
@@ -169,11 +121,12 @@ export class DictionaryComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		this.englishRom = dictionary
-			.map(this.englishRomanization)
+		[this.martianShow, this.englishShow] = this.getMartian;
+		this.englishRomanization = dictionary
+			.map(this.romanize)
 			.sort(this.langSorter);
 
-		this.allTable = this.englishRom
+		this.allTable = this.englishRomanization
 			.map(this.tableStructure)
 			.sort((a, b) => this.sorter(a.Martian, b.Martian));
 

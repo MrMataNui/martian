@@ -7,11 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
 	title = 'Martian';
-	navLinks = ['Phonology', 'Grammar', 'Dictionary'];
+	navLinks = ['Phonology', 'Grammar', 'Dictionary', 'Data'];
 	ids = {
 		phonology: 'nav-phon',
 		grammar: 'nav-grammar',
-		dictionary: 'nav-lexi'
+		dictionary: 'nav-lexi',
+		data: 'nav-data'
 	};
 	getID = (item: string) => document.getElementById(item);
 	low = (item: string) => item.toLowerCase();
