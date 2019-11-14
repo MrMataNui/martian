@@ -1,13 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { Routes, RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DictionaryComponent } from './dictionary/dictionary.component';
 import { GrammarComponent } from './grammar/grammar.component';
 import { PhonologyComponent } from './phonology/phonology.component';
 import { DataComponent } from './data/data.component';
-import { Routes, RouterModule } from '@angular/router';
 
 const appRoutes: Routes = [
 	{ path: 'phonology', component: PhonologyComponent },
@@ -19,7 +19,11 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-	imports: [BrowserModule, AppRoutingModule, RouterModule.forRoot(appRoutes)],
+	imports: [
+		BrowserModule,
+		AppRoutingModule,
+		RouterModule.forRoot(appRoutes)
+	],
 	declarations: [
 		AppComponent,
 		DictionaryComponent,

@@ -1,6 +1,6 @@
 // tslint:disable:forin
 import { Component, OnInit } from '@angular/core';
-import { dictionary, Romanization, soundSymbols, SoundSymbols, Dictionary } from './dictionary.modal';
+import { dictionary, Romanization, soundSymbols, SoundSymbols, Dictionary, GerSymbols } from './dictionary.modal';
 
 @Component({
 	selector: 'app-dictionary',
@@ -17,8 +17,8 @@ export class DictionaryComponent implements OnInit {
 	allTable: Romanization[];
 	symbols: string[] = [ ...soundSymbols.map(letter => letter.letter) ];
 	romanization: string[] = [ ...soundSymbols.map(letter => letter.Romanization) ];
-	symbols1: { letter: string, romanization: string }[] = [];
-	symbols2: { letter: string, romanization: string }[] = [];
+	symbols1: GerSymbols[] = [];
+	symbols2: GerSymbols[] = [];
 	soundSymbols: SoundSymbols[] = soundSymbols;
 	marsTable: Romanization[];
 

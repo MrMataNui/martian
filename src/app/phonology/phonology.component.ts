@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { soundSymbol } from '../dictionary';
+import { soundSymbol } from '../dictionary.min';
 @Component({
 	selector: 'app-phonology',
 	templateUrl: './phonology.component.html',

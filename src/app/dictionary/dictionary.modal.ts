@@ -1,4 +1,4 @@
-import { marsDitionary, soundSymbol } from '../dictionary';
+import { marsDitionary, soundSymbol } from '../dictionary.min';
 
 export interface Dictionary {
 	English: string;
@@ -46,6 +46,6 @@ export interface FirstWord {
 	word: string;
 }
 
-export const removeDups = (names: string[]): string[] => names.filter((v, i) => names.indexOf(v) === i);
+export interface GerSymbols { letter: string; romanization: string; }
 
 export const soundSymbols: SoundSymbols[] = soundSymbol;
