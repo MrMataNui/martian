@@ -1,81 +1,65 @@
 .span1 {
-  position: absolute;
-  left: 0px;
-  text-align: right;
-  background: transparent;
+	position: absolute;
+	left: 0px;
+	text-align: right;
+	background: transparent;
 }
-.span2 {
-  padding: 0px 1px 0px 2px;
-}
-span.span2.transparent {
-  background: transparent;
-}
-span.span2.color {
-  background: #f9f9f9;
-}
+.span2 { padding: 0px 1px 0px 2px; }
+span.span2.transparent { background: transparent; }
+span.span2.color { background: #f9f9f9; }
 
-#syll-struct {
-  text-align: center;
-}
+#syll-struct { text-align: center; }
 
-#spell-rules-table {
-  width: 100% !important;
-}
+#spell-rules-table { width: 100% !important; }
 #spell-rules {
-  padding: 0px 15px 20px;
-  margin: 0 auto 1em;
+	padding: 0px 15px 20px;
+	margin: 0 auto 1em;
 }
-#consonants-table td {
-  align-self: center;
-}
+#consonants-table td { align-self: center; }
 
 #vowel-graph {
-  position: relative;
-  height: 224px;
-  width: 320px;
-  font-size: 110%;
-  background: transparent;
+	position: relative;
+	height: 224px;
+	width: 320px;
+	font-size: 110%;
+	background: transparent;
 }
 
-#vowel-graph tr {
-  background-color: transparent;
-}
+#vowel-graph tr { background-color: transparent; }
 #vowel-graph tr span {
-  position: absolute;
-  left: 0px;
-  text-align: right;
+	position: absolute;
+	left: 0px;
+	text-align: right;
 }
 
-#vowel-graph tr span span {
-  padding: 0px 1px 0px 2px;
-}
+#vowel-graph tr span span { padding: 0px 1px 0px 2px; }
 
 #vowel-graph div {
-  height: 1px;
-  width: 60px;
-  position: absolute;
-  background: transparent;
+	height: 1px;
+	width: 60px;
+	position: absolute;
+	background: transparent;
 }
 
 #vowel-table {
-  text-align: center;
-  font-size: 125%;
-  font-weight: bold;
-  background: #f2f2ce;
-  font-weight: bold;
+	text-align: center;
+	font-size: 125%;
+	font-weight: bold;
+	background: #f2f2ce;
+	font-weight: bold;
 }
 
 #vowel-table2 {
-  position: relative;
-  line-height: 1.4em;
-  background: transparent;
-  background: #f9f9f9;
-  margin: 0em auto 0em auto;
+	position: relative;
+	line-height: 1.4em;
+	background: transparent;
+	background: #f9f9f9;
+	margin: 0em auto 0em auto;
 }
 
 @media screen and (max-device-width: 480px) and (orientation: portrait) {
-  #lang-phon {
-    display: flex;
-    flex-flow: column wrap;
-  }
+	#lang-phon {
+		display: flex;
+		flex-flow: column wrap;
+	}
 }

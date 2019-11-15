@@ -1,30 +1,30 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <title>Martian</title>
-    <meta charset="utf-8" />
-    <base href="/" />
-    <link href="https://www.vulgarlang.com/style/vulgar-style27.css" rel="stylesheet" />
-    <link href="https://www.vulgarlang.com/pretty2.css" rel="stylesheet" />
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Judson|Megrim&display=swap" />
-  </head>
-  <body>
-    <app-root></app-root>
-    <canvas class="background"></canvas>
-    <script src="assets/particles.min.js"></script>
-    <script>
-      window.onload = () => Particles.init({
-        selector: 'canvas.background',
-        maxParticles: 100,
-        speed: 1.5,
-        connectParticles: true,
-        minDistance: 150,
-        color: ['#FF0', '#F0F', '#0FF']
-      });
-    </script>
-  </body>
+	<head>
+		<title>Martian</title>
+		<meta charset="utf-8" />
+		<base href="/" />
+		<link href="https://www.vulgarlang.com/style/vulgar-style27.css" rel="stylesheet" />
+		<link href="https://www.vulgarlang.com/pretty2.css" rel="stylesheet" />
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Judson|Megrim&display=swap" />
+	</head>
+	<body>
+		<app-root></app-root>
+		<canvas class="background"></canvas>
+		<script src="assets/particles.min.js"></script>
+		<script>
+			window.onload = () => Particles.init({
+				selector: 'canvas.background',
+				maxParticles: 100,
+				speed: 1.5,
+				connectParticles: true,
+				minDistance: 150,
+				color: ['#FF0', '#F0F', '#0FF']
+			});
+		</script>
+	</body>
 </html>
 <!--
 npm run build-push

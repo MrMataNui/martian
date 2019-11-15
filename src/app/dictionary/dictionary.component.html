@@ -1,62 +1,72 @@
 <div id="lang-lexi">
-  <p id="table-sort">
-    <button id="MartianSort" class="button0 button10" (click)="changeLang('Lang')"> Sort by Martian word </button>
-    <button id="EnglishSort" class="button0 button10" (click)="changeLang('English')"> Sort by English word </button>
-  </p>
-  <br />
-  <table id="martian-letter">
-    <tr>
-      <th colspan="16" class="letterCheck" (click)="newTable = allTable"> All Letters </th>
-    </tr>
-    <tr>
-      <ng-container *ngFor="let symbol of symbols1" [ngTemplateOutlet]="thenCheck"
-        [ngTemplateOutletContext]="{symbol:symbol}">
-      </ng-container>
-    </tr>
-    <tr>
-      <ng-container *ngFor="let symbol of symbols2" [ngTemplateOutlet]="thenCheck"
-        [ngTemplateOutletContext]="{symbol:symbol}">
-      </ng-container>
-    </tr>
-  </table>
-  <br />
-  <table id="lexicon-table">
-    <tr>
-      <th> Martian Word </th>
-      <th> /Pronunciation/ </th>
-      <th> Romanization </th>
-      <th> English Word </th>
-      <th> Part Of Speech </th>
-    </tr>
-    <tr *ngFor="let newWord of newTable">
-      <td class="martian"> {{ newWord.Martian }} </td>
-      <td> /<span class="ipa">{{ newWord.IPA }}</span>/ </td>
-      <td> {{ newWord.Romanization }} </td>
-      <td> {{ capitalize(newWord.English) }} </td>
-      <td> {{ newWord.POS }} </td>
-    </tr>
-  </table>
+	<p id="table-sort">
+		<button id="MartianSort" class="button0 button10" (click)="changeLang('Lang')"> Sort by Martian word </button>
+		<button id="EnglishSort" class="button0 button10" (click)="changeLang('English')"> Sort by English word </button>
+	</p>
+	<br />
+	<table id="martian-letter">
+		<tr>
+			<th colspan="16" class="letterCheck" (click)="newTable = allTable"> All Letters </th>
+		</tr>
+		<tr>
+			<ng-container
+				*ngFor="let symbol of symbols1"
+				[ngTemplateOutlet]="thenCheck"
+				[ngTemplateOutletContext]="{symbol:symbol}"
+			></ng-container>
+		</tr>
+		<tr>
+			<ng-container
+				*ngFor="let symbol of symbols2"
+				[ngTemplateOutlet]="thenCheck"
+				[ngTemplateOutletContext]="{symbol:symbol}"
+			></ng-container>
+		</tr>
+	</table>
+	<br />
+	<h3> Count </h3>
+	<h3>
+		<span *ngIf="newTable === allTable;">All Letters</span>
+		<span *ngIf="newTable !== allTable;" class="martian">{{ newTable[0].Martian.charAt(0) }}</span>
+		- {{ newTable.length.toLocaleString('en') }}
+	</h3>
+	<br />
+	<table id="lexicon-table">
+		<tr>
+			<th> Martian Word </th>
+			<th> /Pronunciation/ </th>
+			<th> Romanization </th>
+			<th> English Word </th>
+			<th> Part Of Speech </th>
+		</tr>
+		<tr *ngFor="let newWord of newTable">
+			<td class="martian"> {{ newWord.Martian }} </td>
+			<td> /<span class="ipa">{{ newWord.IPA }}</span>/ </td>
+			<td> {{ newWord.Romanization }} </td>
+			<td> {{ capitalize(newWord.English) }} </td>
+			<td> {{ newWord.POS }} </td>
+		</tr>
+	</table>
 </div>
 <ng-template #thenCheck let-symbol='symbol'>
-  <td>
-    <ng-container *ngFor="let find of getAllWords">
-      <ng-container *ngIf="symbol.letter == find.letter;">
-        <ng-container [ngTemplateOutlet]="find.words.length > 0 ? ifCheck : elseCheck"
-          [ngTemplateOutletContext]="{find:find,symbol:symbol}">
-        </ng-container>
-      </ng-container>
-    </ng-container>
-  </td>
+	<td>
+		<ng-container *ngFor="let find of getAllWords">
+			<ng-container *ngIf="symbol.letter == find.letter;">
+				<ng-container [ngTemplateOutlet]="find.words.length > 0 ? lengthFull : lengthNull"
+					[ngTemplateOutletContext]="{find:find,symbol:symbol}"></ng-container>
+			</ng-container>
+		</ng-container>
+	</td>
 </ng-template>
-<ng-template #ifCheck let-find='find' let-symbol='symbol'>
-  <div class="letterCheck" (click)="newTable = find.words">
-    <span class="martian">{{ symbol.letter }}</span>
-    <span>({{ symbol.romanization }})</span>
-  </div>
+<ng-template #lengthFull let-find='find' let-symbol='symbol'>
+	<div class="letterCheck" (click)="newTable = find.words">
+		<span class="martian">{{ symbol.letter }}</span>
+		<span>({{ symbol.romanization }})</span>
+	</div>
 </ng-template>
-<ng-template #elseCheck let-symbol='symbol'>
-  <div>
-    <span class="martian">{{ symbol.letter }}</span>
-    <span>({{ symbol.romanization }})</span>
-  </div>
+<ng-template #lengthNull let-symbol='symbol'>
+	<div>
+		<span class="martian">{{ symbol.letter }}</span>
+		<span>({{ symbol.romanization }})</span>
+	</div>
 </ng-template>

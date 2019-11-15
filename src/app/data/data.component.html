@@ -1,26 +1,26 @@
 <br />
 <div id="data-area">
-  <table id="letter-count" style="width: 10em;">
-    <tr>
-      <th> number of letters </th>
-    </tr>
-    <tr>
-      <td> {{ symbolNum }} </td>
-    </tr>
-  </table>
-  <br />
-  <table id="letter-occourances" style="width: 10em;">
-    <tr>
-      <th> Letter </th>
-      <th> Occourances </th>
-    </tr>
-    <tr *ngFor="let symbol of symbolOccourances">
-      <td>
-        <span class="martian">{{ symbol.symbol }}</span>
-        <span>({{ symbol.letter }})</span>
-      </td>
-      <td> {{ symbol.count }} </td>
-    </tr>
-  </table>
-  <!-- <br /> -->
+	<table id="letter-count" style="width: 10em;">
+		<tr>
+			<th> number of letters </th>
+		</tr>
+		<tr>
+			<td> {{ symbolNum }} </td>
+		</tr>
+	</table>
+	<br />
+	<table id="letter-occourances" style="width: 10em;">
+		<tr>
+			<th> Letter </th>
+			<th> Occourances </th>
+		</tr>
+		<tr *ngFor="let symbol of symbolOccourances">
+			<td>
+				<span class="martian">{{ symbol.symbol }}</span>
+				<span>({{ symbol.letter }})</span>
+			</td>
+			<td> {{ symbol.count }} </td>
+		</tr>
+	</table>
+	<!-- <br /> -->
 </div>

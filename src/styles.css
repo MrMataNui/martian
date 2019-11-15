@@ -193,6 +193,7 @@ and (orientation: portrait) {
 	#mobile-nav {
 		display: block;
 		font-size: 2em;
+		text-align: center;
 	}
 
 	#head-nav { display: none; }

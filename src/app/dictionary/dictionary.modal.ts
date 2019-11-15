@@ -14,12 +14,6 @@ export interface Romanization {
 	English: string;
 	POS: string;
 	Martian: string;
-	POS2?: string;
-	Martian2?: string;
-	POS3?: string;
-	Martian3?: string;
-	POS4?: string;
-	Martian4?: string;
 }
 
 export interface SoundSymbols {
@@ -46,6 +40,9 @@ export interface FirstWord {
 	word: string;
 }
 
-export interface GerSymbols { letter: string; romanization: string; }
+export interface GerSymbols {
+	letter: string;
+	romanization: string;
+}
 
 export const soundSymbols: SoundSymbols[] = soundSymbol;

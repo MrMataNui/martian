@@ -8,7 +8,10 @@ import { dictionary, Romanization, soundSymbols, SoundSymbols, Dictionary, GerSy
 	styleUrls: ['./dictionary.component.css']
 })
 export class DictionaryComponent implements OnInit {
-	constructor() { this.romanize = this.romanize.bind(this); }
+	constructor() {
+		this.romanize = this.romanize.bind(this);
+		this.langSorter = this.langSorter.bind(this);
+	}
 
 	englishRomanization: Romanization[];
 	martianShow: boolean;
@@ -32,15 +35,13 @@ export class DictionaryComponent implements OnInit {
 	sorter = (a: string, b: string): number => (a < b) ? -1 : (a > b) ? 1 : 0;
 
 	dicionaryClick(event: any) {
-		switch (event.target.id) {
-			case 'show-martian': [this.martianShow, this.englishShow] = this.getMartian; break;
-			case 'show-english': [this.martianShow, this.englishShow] = this.getEnglish; break;
-		}
+	[this.martianShow, this.englishShow] = (event.target.id === 'show-martian')
+		? this.getMartian : this.getEnglish;
 	}
 
 	langSorter(a: Romanization, b: Romanization): number {
-		const [c, d] = (a.IPA) ? [a.Martian, b.Martian] : [a.English, b.English];
-		return c < d ? -1 : 1;
+		const [c, d]: string[] = (a.IPA) ? [a.Martian, b.Martian] : [a.English, b.English];
+		return this.sorter(c, d);
 	}
 
 	romanize(getWord: Dictionary): Romanization {
@@ -87,25 +88,12 @@ export class DictionaryComponent implements OnInit {
 		return [getIPA, getRom];
 	}
 
-	tableStructure = (get): Romanization => ({
-		Martian: get.Martian,
-		Romanization: (get.Romanization) ? get.Romanization : '',
-		IPA: (get.IPA) ? get.IPA : '',
-		POS: get.POS,
-		English: get.English,
-		POS2: (get.POS2) ? get.POS2 : '',
-		Martian2: (get.Martian2) ? get.Martian2 : '',
-		POS3: (get.POS3) ? get.POS3 : '',
-		Martian3: (get.Martian3) ? get.Martian3 : '',
-		POS4: (get.POS4) ? get.POS4 : '',
-		Martian4: (get.Martian4) ? get.Martian4 : ''
-	})
-
 	changeLang(lang: string): void {
-		switch (lang) {
-			case 'English': this.newTable.sort((a, b) => this.sorter(a.English, b.English)); break;
-			case 'Lang': this.newTable.sort((a, b) => this.sorter(a.Martian, b.Martian)); break;
-		}
+		this.newTable.sort((a, b) => {
+		return	(lang === 'English')
+			? this.sorter(a.English, b.English)
+			: this.sorter(a.Martian, b.Martian);
+		});
 	}
 
 	wordSort(lang: Romanization[], symbols: string[]): void {
@@ -122,36 +110,31 @@ export class DictionaryComponent implements OnInit {
 
 	ngOnInit() {
 		[this.martianShow, this.englishShow] = this.getMartian;
-		this.englishRomanization = dictionary
+		this.allTable = dictionary
 			.map(this.romanize)
 			.sort(this.langSorter);
-
-		this.allTable = this.englishRomanization
-			.map(this.tableStructure)
-			.sort((a, b) => this.sorter(a.Martian, b.Martian));
 
 		this.symbols = this.symbols.sort(this.sorter);
 
 		this.wordSort(this.allTable, this.symbols);
 		this.newTable = this.getAllWords[0].words;
-		// console.log('this.getAllWords', this.getAllWords);
 
 		if (this.symbols.length % 2) { this.symbols.push(''); }
 		const symbolLength: number = this.symbols.length / 2;
 
-		const getSym = [
-			this.symbols.slice(0, symbolLength),
-			this.symbols.slice(symbolLength)
-		];
+		const getSym = {
+			row1: this.symbols.slice(0, symbolLength),
+			row2: this.symbols.slice(symbolLength)
+		};
 
-		const getRom = [
-			this.romanization.slice(0, symbolLength),
-			this.romanization.slice(symbolLength)
-		];
+		const getRom = {
+			row1: this.romanization.slice(0, symbolLength),
+			row2: this.romanization.slice(symbolLength)
+		};
 
 		for (let i = 0; i < symbolLength; i++) {
-			this.symbols1.push({ letter: getSym[0][i], romanization: getRom[0][i] });
-			this.symbols2.push({ letter: getSym[1][i], romanization: getRom[1][i] });
+			this.symbols1.push({ letter: getSym.row1[i], romanization: getRom.row1[i] });
+			this.symbols2.push({ letter: getSym.row2[i], romanization: getRom.row2[i] });
 		}
 	}
 }
