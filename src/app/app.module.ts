@@ -8,30 +8,35 @@ import { DictionaryComponent } from './dictionary/dictionary.component';
 import { GrammarComponent } from './grammar/grammar.component';
 import { PhonologyComponent } from './phonology/phonology.component';
 import { DataComponent } from './data/data.component';
+import { TranslateComponent } from './translate/translate.component';
 
 const appRoutes: Routes = [
+	{ path: 'translator', component: TranslateComponent },
 	{ path: 'phonology', component: PhonologyComponent },
 	{ path: 'grammar', component: GrammarComponent },
 	{ path: 'dictionary', component: DictionaryComponent },
 	{ path: 'data', component: DataComponent },
-	{ path: '', redirectTo: '/phonology', pathMatch: 'full' },
-	{ path: '**', redirectTo: '/phonology', pathMatch: 'full' }
+	{ path: '', redirectTo: '/translator', pathMatch: 'full' },
+	{ path: '**', redirectTo: '/translator', pathMatch: 'full' }
 ];
 
 @NgModule({
-	imports: [
-		BrowserModule,
-		AppRoutingModule,
-		RouterModule.forRoot(appRoutes)
-	],
-	declarations: [
-		AppComponent,
-		DictionaryComponent,
-		GrammarComponent,
-		PhonologyComponent,
-		DataComponent
-	],
-	providers: [],
-	bootstrap: [AppComponent]
+		imports: [
+			BrowserModule,
+			AppRoutingModule,
+			RouterModule.forRoot(appRoutes)
+		],
+		declarations: [
+			AppComponent,
+			DictionaryComponent,
+			GrammarComponent,
+			PhonologyComponent,
+			DataComponent,
+			TranslateComponent
+		],
+		providers: [],
+		bootstrap: [
+			AppComponent
+		]
 })
 export class AppModule { }

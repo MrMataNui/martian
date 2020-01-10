@@ -6,7 +6,7 @@
     "lint": "ng lint --fix",
     "build-push": "npm run build && ngh && npm run push",
     "build": "npm run lint && ng build --output-path docs --prod --base-href \"https://MrMataNui.github.io/martian/\"",
-    "push": "git add . && git commit -m \"Added letter count\" && git push origin",
+    "push": "git add . && git commit -m \"Added the translator\" && git push origin",
     "ng": "ng",
     "clean": "rm -rf ./node_modules",
     "reinstall": "npm run clean && npm install",

@@ -7,8 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
 	title = 'Martian';
-	navLinks = ['Phonology', 'Grammar', 'Dictionary', 'Data'];
+	navLinks = ['Translator', 'Phonology', 'Grammar', 'Dictionary', 'Data'];
 	ids = {
+		translator: 'nav-tran',
 		phonology: 'nav-phon',
 		grammar: 'nav-grammar',
 		dictionary: 'nav-lexi',

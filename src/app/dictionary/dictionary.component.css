@@ -6,7 +6,7 @@
 }
 
 .center { text-align: center; }
-
+.small.martian { font-size: 0.9em; }
 #show-martian,
 #show-english {
 	cursor: pointer;

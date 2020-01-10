@@ -1,23 +1,16 @@
 <div id="lang-lexi">
-	<p id="table-sort">
-		<button id="MartianSort" class="button0 button10" (click)="changeLang('Lang')"> Sort by Martian word </button>
-		<button id="EnglishSort" class="button0 button10" (click)="changeLang('English')"> Sort by English word </button>
-	</p>
-	<br />
 	<table id="martian-letter">
 		<tr>
-			<th colspan="16" class="letterCheck" (click)="newTable = allTable"> All Letters </th>
+			<th colspan="16" class="letterCheck" (click)="newTable = allTable">All Words</th>
 		</tr>
 		<tr>
-			<ng-container
-				*ngFor="let symbol of symbols1"
+			<ng-container *ngFor="let symbol of symbols1"
 				[ngTemplateOutlet]="thenCheck"
 				[ngTemplateOutletContext]="{symbol:symbol}"
 			></ng-container>
 		</tr>
 		<tr>
-			<ng-container
-				*ngFor="let symbol of symbols2"
+			<ng-container *ngFor="let symbol of symbols2"
 				[ngTemplateOutlet]="thenCheck"
 				[ngTemplateOutletContext]="{symbol:symbol}"
 			></ng-container>
@@ -26,9 +19,11 @@
 	<br />
 	<h3> Count </h3>
 	<h3>
-		<span *ngIf="newTable === allTable;">All Letters</span>
-		<span *ngIf="newTable !== allTable;" class="martian">{{ newTable[0].Martian.charAt(0) }}</span>
-		- {{ newTable.length.toLocaleString('en') }}
+		<span *ngIf="newTable === allTable;">All</span>
+		<span *ngIf="newTable !== allTable;" class="small martian">{{ newTable[0].Martian.charAt(0) }}</span>
+		| {{ newTable.length.toLocaleString('en') }}
+		<span *ngIf="newTable.length === 1;">Word</span>
+		<span *ngIf="newTable.length > 1;">Words</span>
 	</h3>
 	<br />
 	<table id="lexicon-table">
@@ -43,6 +38,7 @@
 			<td class="martian"> {{ newWord.Martian }} </td>
 			<td> /<span class="ipa">{{ newWord.IPA }}</span>/ </td>
 			<td> {{ newWord.Romanization }} </td>
+			<!-- <td> {{ capitalize(newWord.Romanization) }} </td> -->
 			<td> {{ capitalize(newWord.English) }} </td>
 			<td> {{ newWord.POS }} </td>
 		</tr>
@@ -52,8 +48,10 @@
 	<td>
 		<ng-container *ngFor="let find of getAllWords">
 			<ng-container *ngIf="symbol.letter == find.letter;">
-				<ng-container [ngTemplateOutlet]="find.words.length > 0 ? lengthFull : lengthNull"
-					[ngTemplateOutletContext]="{find:find,symbol:symbol}"></ng-container>
+				<ng-container
+					[ngTemplateOutlet]="find.words.length > 0 ? lengthFull : lengthNull"
+					[ngTemplateOutletContext]="{find:find,symbol:symbol}"
+				></ng-container>
 			</ng-container>
 		</ng-container>
 	</td>

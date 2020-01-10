@@ -28,15 +28,15 @@ export class DictionaryComponent implements OnInit {
 	firstWord: { letter: string, word: Romanization }[] = [];
 	getAllWords: { letter: string, words: Romanization[] }[] = [];
 
-	getMartian: boolean[] = [true, false];
-	getEnglish: boolean[] = [false, true];
+	martianBool: boolean[] = [true, false];
+	englishBool: boolean[] = [false, true];
 
 	capitalize = (name: string): string => name.charAt(0).toUpperCase() + name.slice(1);
 	sorter = (a: string, b: string): number => (a < b) ? -1 : (a > b) ? 1 : 0;
 
 	dicionaryClick(event: any) {
 	[this.martianShow, this.englishShow] = (event.target.id === 'show-martian')
-		? this.getMartian : this.getEnglish;
+		? this.martianBool : this.englishBool;
 	}
 
 	langSorter(a: Romanization, b: Romanization): number {
@@ -109,7 +109,7 @@ export class DictionaryComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		[this.martianShow, this.englishShow] = this.getMartian;
+		[this.martianShow, this.englishShow] = this.martianBool;
 		this.allTable = dictionary
 			.map(this.romanize)
 			.sort(this.langSorter);

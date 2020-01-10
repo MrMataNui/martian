@@ -1,8 +1,23 @@
 /*
 \t\{(\n\t+Martian: '.+),(.+'),(\n\t+English: '.+'),(\n\t+POS: '.+'),?\n\t+\}
-\t\{\n\t+(Martian: '.+',)\n\t+(English: '.+',)\n\t+(POS: '.+')\n\t+\}
-\t\{ (Martian: '.+'),.*\},\n\t\{ \1,.*\}
+\t\{ (Martian: '.+',).*\},\n\t\{ \1.*\}
 */
+/*
+\t\{(\n\t+)(Martian: '.+',)\1\t(English: '.+',)\1\t(POS: '.+')\1\}
+\t\{ $2 $3 $4 \}
+*/
+export function capitalize(text: string): string {
+	const textCapital = text.charAt(0).toUpperCase();
+	const textLower = text.slice(1).toLowerCase();
+	return (text !== '') ? `${textCapital}${textLower}` : '';
+}
+export const getIPA = (langIPA: string): string => `/${langIPA}/`;
+// tslint:disable:max-line-length
+export const erWordsDefaults: string[] = ['oyster', 'matter', 'corner', 'platter', 'murder', 'foster', 'never', 'danger', 'tiger', 'thunder', 'after', 'usher', 'confer', 'render', 'locker', 'grandmother', 'winter', 'wander', 'character', 'powder', 'discover', 'clever', 'peer', 'over', 'water', 'trigger', 'ginger', 'transfer', 'later', 'player', 'diaper', 'sister', 'better', 'weather', 'bunker', 'after', 'master', 'parameter', 'former', 'cracker', 'number', 'gather', 'answer', 'grandfather', 'either', 'under', 'uncover', 'deter', 'rather', 'diner', 'soldier', 'cover', 'linger', 'differ', 'slender', 'rubber', 'cheer', 'remember', 'better', 'bother', 'flower', 'anger', 'container', 'letter', 'deliver', 'frontier', 'shoulder', 'teenager', 'fiber', 'tower', 'over', 'other', 'hammer', 'silver', 'shiver', 'register', 'leader', 'another', 'neither', 'folder', 'spider', 'brother', 'publisher', 'power', 'summer', 'refer', 'sewer', 'cater', 'bolster', 'diameter', 'recover', 'order', 'father', 'answer', 'trader', 'simmer', 'roster', 'dealer', 'shatter', 'partner', 'matter', 'ponder', 'lever', 'monster', 'daughter', 'surrender', 'leather', 'member', 'temper', 'perimeter', 'forever', 'batter', 'officer', 'rather', 'copper', 'together', 'paper', 'beer', 'quarter', 'copper', 'teacher', 'burger', 'consider', 'owner', 'drawer', 'grocer', 'wonder', 'disaster', 'feather', 'offer', 'however', 'hover', 'waiter', 'manager', 'premier', 'loser', 'volunteer', 'whisper', 'sweater', 'sober', 'boulder', 'liver', 'carrier', 'finger', 'per', 'eager', 'encounter', 'supper', 'conquer', 'trailer', 'enter', 'banner', 'forefather', 'lobster', 'ever', 'crater', 'river', 'rather', 'order', 'whether', 'whatever', 'semester', 'writer', 'keeper', 'other', 'butter', 'filter', 'manner', 'career', 'toddler', 'voucher', 'cylinder', 'mother'];
+export const istWordsDefaults: string[] = ['insist', 'mist', 'florist', 'mist', 'resist', 'enlist', 'persist', 'moist', 'protagonist', 'list', 'dentist', 'exist', 'waist', 'tourist', 'twist', 'assist', 'specialist', 'chemist', 'wrist'];
+export const ionWordsDefaults: string[] = ['friction', 'restoration', 'competition', 'destination', 'proliferation', 'recession', 'elimination', 'religion', 'foundation', 'accommodation', 'question', 'permission', 'succession', 'organisation', 'opinion', 'direction', 'commission', 'conviction', 'champion', 'vacation', 'perception', 'fashion', 'station', 'vision', 'petition', 'location', 'affection', 'emotion', 'concession', 'allocation', 'passion', 'education', 'resolution', 'motion', 'cushion', 'recognition', 'circulation', 'infection', 'perfection', 'retention', 'revolution', 'information', 'tuition', 'regression', 'portion', 'erection', 'ammunition', 'tension', 'million', 'observation', 'attention', 'examination', 'detention', 'condition', 'impression', 'illusion', 'nutrition', 'option', 'commission', 'mansion', 'region', 'section', 'fashion', 'cushion', 'disposition', 'constellation', 'projection', 'distinction', 'intervention', 'action', 'lion', 'envision', 'compassion', 'plantation', 'nation', 'constitution', 'fiction', 'potion', 'sensation', 'population', 'mention', 'recreation', 'provision', 'transition', 'caution', 'administration', 'position', 'trillion', 'elevation', 'repetition', 'tradition', 'protection', 'ambition', 'reflection', 'suggestion', 'decision', 'election', 'explanation', 'organisation', 'description', 'preparation', 'destruction', 'division', 'expression', 'litigation', 'situation', 'billion', 'addiction', 'reservation'];
+export const ingWordsDefaults: string[] = ['concerning', 'pending', 'king', 'marketing', 'earring', 'amazing', 'stunning', 'sibling', 'anything', 'according', 'something', 'building', 'offspring', 'lightning', 'morning', 'daunting', 'regarding', 'thing', 'overwhelming', 'swing', 'ring', 'bring', 'including', 'ring', 'darling', 'clothing', 'ring', 'fling', 'nothing', 'wing', 'missing', 'evening', 'during', 'painting', 'sing', 'opening', 'everything', 'training', 'meeting', 'feeling', 'spelling', 'hearing', 'wedding', 'boring', 'string'];
+// tslint:enable:max-line-length
 export const soundSymbol = [
 	{ sound: 'æ', letter: 'A', Romanization: 'a' },
 	{ sound: 'ɲ', letter: 'C', Romanization: 'ñ' },
@@ -29,7 +44,13 @@ export const soundSymbol = [
 	{ sound: 'ʒ', letter: 'Z', Romanization: 'ž' }
 ];
 
-export const marsDitionary = [
+export interface NewLang {
+	IPA?: string;
+	Martian: string;
+	English: string;
+	POS: string;
+}
+export const marsDitionary: NewLang[] = [
 	{ Martian: 'TWYRWNSW', English: 'abandon', POS: 'verb' },
 	{ Martian: 'ETSOC', English: 'ability', POS: 'noun' },
 	{ Martian: 'ETSO', English: 'able', POS: 'adjective' },
@@ -1793,8 +1814,7 @@ export const marsDitionary = [
 	{ Martian: 'IYU', English: 'hawk', POS: 'noun' },
 	{ Martian: 'LWLWKA', English: 'hay', POS: 'noun' },
 	{ Martian: 'TWMU', English: 'hazard', POS: 'noun' },
-	{ Martian: 'AZ', English: 'he', POS: 'pronoun' },
-	{ Martian: 'SFUJE', English: 'he', POS: 'pronoun' },
+	{ Martian: 'AZ', English: 'he/she «nominative»', POS: 'pronoun' },
 	{ Martian: 'TWQUD', English: 'head', POS: 'verb' },
 	{ Martian: 'ZIM', English: 'head', POS: 'noun' },
 	{ Martian: 'GAYRER', English: 'heal', POS: 'verb' },
@@ -2030,9 +2050,8 @@ export const marsDitionary = [
 	{ Martian: 'EQO', English: 'island', POS: 'noun' },
 	{ Martian: 'ISO', English: 'isolate', POS: 'verb' },
 	{ Martian: 'LWC', English: 'issue', POS: 'noun' },
-	{ Martian: 'YAJI', English: 'it', POS: 'pronoun' },
-	{ Martian: 'A', English: 'it', POS: 'pronoun' },
-	{ Martian: 'FLWS', English: 'it', POS: 'pronoun' },
+	{ Martian: 'A', English: 'it «accusative»', POS: 'pronoun' },
+	{ Martian: 'FLWS', English: 'it «nominative»', POS: 'pronoun' },
 	{ Martian: 'SLWNSEM', English: 'ivory', POS: 'noun' },
 	{ Martian: 'SNURE', English: 'jail', POS: 'noun' },
 	{ Martian: 'FUFWYCE', English: 'jam', POS: 'verb' },
@@ -2807,7 +2826,6 @@ export const marsDitionary = [
 	{ Martian: 'SFONSENSW', English: 'pluck', POS: 'verb' },
 	{ Martian: 'MARSAL', English: 'plug', POS: 'noun' },
 	{ Martian: 'YE', English: 'plural particle', POS: 'part' },
-	{ Martian: 'DUM', English: 'pluryoua', POS: 'pronoun' },
 	{ Martian: 'SFUNSU', English: 'plus', POS: 'preposition' },
 	{ Martian: 'SNURSEKO', English: 'ply', POS: 'noun' },
 	{ Martian: 'ROJO', English: 'pocket', POS: 'noun' },
@@ -3358,8 +3376,6 @@ export const marsDitionary = [
 	{ Martian: 'FLWFA', English: 'shatter', POS: 'verb' },
 	{ Martian: 'STAGA', English: 'shatter', POS: 'verb' },
 	{ Martian: 'QEZA', English: 'shave', POS: 'verb' },
-	{ Martian: 'FLWS', English: 'she', POS: 'pronoun' },
-	{ Martian: 'TUZ', English: 'she', POS: 'pronoun' },
 	{ Martian: 'CEMA', English: 'shed', POS: 'noun' },
 	{ Martian: 'JIKU', English: 'sheep', POS: 'noun' },
 	{ Martian: 'SNUTSODU', English: 'sheet', POS: 'noun' },
@@ -3427,7 +3443,6 @@ export const marsDitionary = [
 	{ Martian: 'EYRIQW', English: 'sing', POS: 'verb' },
 	{ Martian: 'EYRIQWIC', English: 'singer', POS: 'noun' },
 	{ Martian: 'HEYCA', English: 'single', POS: 'adjective' },
-	{ Martian: 'ZUL', English: 'singyoua', POS: 'pronoun' },
 	{ Martian: 'GAQOK', English: 'sink', POS: 'verb' },
 	{ Martian: 'STATIJ', English: 'sip', POS: 'verb' },
 	{ Martian: 'SFUYRU', English: 'siren', POS: 'noun' },
@@ -4257,10 +4272,9 @@ export const marsDitionary = [
 	{ Martian: 'DOYREM', English: 'yesterday', POS: 'adverb' },
 	{ Martian: 'YAFO', English: 'yet', POS: 'adverb' },
 	{ Martian: 'TWYCO', English: 'yogurt', POS: 'noun' },
-	{ Martian: 'FWZ', English: 'you', POS: 'pronoun' },
-	{ Martian: 'RO', English: 'you', POS: 'pronoun' },
-	{ Martian: 'DIZ', English: 'you «all»', POS: 'pronoun' },
-	{ Martian: 'STEN', English: 'you «all»', POS: 'pronoun' },
+	{ Martian: 'RO', English: 'you «accusative»', POS: 'pronoun' },
+	{ Martian: 'DIZ', English: 'you «all» | «nominative»', POS: 'pronoun' },
+	{ Martian: 'STEN', English: 'you «all» | «accusative»', POS: 'pronoun' },
 	{ Martian: 'SLWNA', English: 'young', POS: 'adjective' },
 	{ Martian: 'SLWNAEC', English: 'youth', POS: 'noun' },
 	{ Martian: 'JINSW', English: 'zero', POS: 'number' },
